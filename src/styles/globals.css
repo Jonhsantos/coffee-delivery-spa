@@ -1,0 +1,6 @@
+@import './tokens.css';
+
+body {
+  background-color: var(--surface-page);
+  color: var(--text-primary);
+}

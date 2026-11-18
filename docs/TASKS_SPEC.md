@@ -128,14 +128,14 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 
 #### [ ] T006 — Implementar tokens oficiais de cores
 
-- **Status:** `PENDENTE`.
+- **Status:** `EM ANDAMENTO` — tokens implementados e verificados; commit pendente.
 - **Objetivo:** Centralizar os 16 tokens HEX do PRD (6 produto e 10 base), sem cores arbitrárias espalhadas.
 - **Requisitos relacionados:** RF-14, RF-15, RF-16; RNF-01, RNF-02.
 - **Arquivos afetados:** `src/styles/tokens.css`, `src/styles/globals.css`.
 - **Critério de pronto:** Todos os 16 tokens coincidem com PRD §12.1; classes/aliases semânticos utilizáveis.
 - **Teste a realizar:** Comparar HEX declarados aos valores do PRD e verificar CSS aplicado.
 - **Commit sugerido:** `style: definir paleta e tokens oficiais`.
-- **Registro de execução:** teste `NÃO EXECUTADO` · evidência `—` · commit `—` · data `—`.
+- **Registro de execução, 2026-11-18:** comparação automatizada com os 16 HEX do PRD: PASSOU; inspeção do CSS computado no navegador: fundo `rgb(250, 250, 250)`, texto `rgb(39, 34, 33)` e token yellow `#dbac2c`, PASSOU; `npm run lint`, `npm run typecheck` e `npm run build`: PASSARAM. Tokens claros e aliases centralizados; tema escuro permanece para T034. Desvio de ordem: T005 da fase anterior permanece pendente; T006 é independente do catálogo. Commit pendente.
 
 #### [ ] T007 — Implementar escala tipográfica
 
