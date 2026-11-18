@@ -603,6 +603,16 @@ npm run test:e2e
 
 No deploy: publicar a saída padrão de build do Vite (`dist/`) e configurar **fallback SPA** para `/checkout` e `/success` retornarem `index.html` em acesso direto. Consultas ViaCEP são feitas pelo navegador por HTTPS, sem segredo/API key. Em ambiente de rede restrita, o checkout deve exibir falha consultável e bloquear confirmação até validar o CEP.
 
+### 11.4 Registro central de risco de dependências
+
+**Exceção temporária ativa — GHSA-fc5q-39xc-vjpf / CVE-2026-112366:** em 2026-11-18 o responsável estendeu expressamente a aceitação de risco às tarefas subsequentes, exclusivamente para desenvolvimento local confiável. A exceção é vinculada ao advisory, ambiente, versões e exposição, não ao número da tarefa. A vulnerabilidade de ReDoS afeta `picomatch` em versões `<=4.0.7`; a versão instalada verificada é `4.0.7`. A cadeia atual inclui `vite@8.3.8` diretamente e via `tinyglobby`/`fdir`, `@vitejs/plugin-react@6.3.0` e `vitest@5.1.1`. Novos caminhos transitivos do mesmo advisory devem ser registrados, sem nova autorização ou bloqueio automático quando permanecerem nas mesmas condições e risco residual.
+
+**Justificativa e risco residual:** não se identificou correção upstream publicada na investigação registrada em T002. O código atual não recebe padrões glob de usuário, mas a análise não comprovou ausência de caminhos exploráveis nos fluxos internos do Vite/Vitest. A falha pode causar indisponibilidade; a aceitação não significa correção ou eliminação do risco.
+
+**Limites e medidas:** executar ferramentas somente em ambiente local confiável; Vite configurado por padrão em `127.0.0.1`, sem exposição pública, túneis ou proxies; não processar padrões glob não confiáveis. O host pode ser sobrescrito por argumentos e não deve ser exposto. Executar `npm audit` e `npm audit --omit=dev` ao alterar dependências e antes de deploy, registrando falhas e caminhos sem suprimir alertas. Não usar `npm audit fix --force`, desativar auditorias ou aplicar overrides inseguros.
+
+**Fora da aceitação:** outros advisories, dependências de produção afetadas, exposição pública ou mudanças relevantes na gravidade ou explorabilidade. Nessas situações interromper a tarefa afetada e apresentar a diferença concreta para decisão. Se somente este advisory aceito permanecer e os demais critérios forem cumpridos, é possível concluir com ressalva. Reavaliar antes de deploy, em mudança relevante de exposição ou quando uma correção upstream for publicada; validar e aplicar a correção assim que possível. Esta exceção não aprova deploy e não altera os requisitos de segurança do produto.
+
 ## 12. Matriz de rastreabilidade RF e regras de negócio
 
 | ID PRD | Implementação técnica principal | Evidência de aceite |

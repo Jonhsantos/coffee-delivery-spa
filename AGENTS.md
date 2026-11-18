@@ -160,7 +160,16 @@ Verificar scripts no `package.json` antes de executar. Requisitos mínimos de te
 - **Visual e acessibilidade:** comparar com `coffee-delivery.pen`, conferir tokens/ícones/fontes, testar teclado, foco, mensagens de erro, contraste, zoom e largura mínima de 320px.
 - **Entrega:** build válido, deploy HTTPS, fallback SPA e smoke test em produção, conforme T040–T043.
 
-Registrar comando, ambiente, resultado (passou/falhou/não executado), evidência e limitações. Não declarar cobertura, desempenho, acessibilidade ou fidelidade visual sem verificação. Falha relevante deve ser resolvida ou deixar a tarefa pendente/bloqueada.
+Registrar comando, ambiente, resultado (passou/falhou/não executado), evidência e limitações. Não declarar cobertura, desempenho, acessibilidade ou fidelidade visual sem verificação. Falha relevante deve ser resolvida ou deixar a tarefa pendente/bloqueada, salvo risco específico explicitamente aceito e documentado conforme §10.1.
+
+### 10.1 Gerenciamento de vulnerabilidades
+
+- Consultar o registro central em `docs/TECH_SPEC.md` §11.4. Exceções são vinculadas ao advisory, versões afetadas, ambiente e condições de exposição, não a uma tarefa isolada.
+- Executar `npm audit` e `npm audit --omit=dev` nas etapas que alterarem dependências e antes de deploy; registrar resultado real e caminhos afetados em `docs/TASKS_SPEC.md`. Não suprimir advisories, desativar auditoria, usar `npm audit fix --force` ou aplicar overrides inseguros.
+- Novos caminhos transitivos do mesmo advisory não exigem nova autorização quando permanecerem no ambiente e risco aceitos; registrá-los. Não bloquear apenas pelo aumento de registros nem repetir investigação integral sem fatos novos relevantes.
+- Outros advisories, dependências de produção afetadas, exposição pública ou mudança relevante de gravidade ou explorabilidade não estão cobertos: interromper a tarefa afetada, relatar a diferença e solicitar decisão.
+- Manter Vite e ferramentas de desenvolvimento em ambientes locais confiáveis, sem exposição à internet, túneis ou proxies públicos; não processar padrões glob de entrada não confiável. Uma exceção não comprova ausência de exploração nem corrige a vulnerabilidade.
+- Reavaliar diante de correção upstream validada, alteração relevante de exposição e antes de qualquer deploy; substituir a exceção por correção validada assim que disponível. Se os demais critérios forem atendidos e somente um advisory coberto permanecer, concluir com ressalva e evidência, sem enfraquecer testes ou requisitos de produto.
 
 ## 11. Commits e manutenção do checklist
 

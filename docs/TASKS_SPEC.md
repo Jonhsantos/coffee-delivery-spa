@@ -87,14 +87,17 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 
 #### [ ] T003 — Instalar dependências e configurar ferramentas
 
-- **Status:** `PENDENTE`.
+- **Status:** `EM ANDAMENTO` — aceitação estendida pelo responsável; verificações finais em curso.
 - **Objetivo:** Configurar Router, Tailwind, Phosphor, React Hook Form, Zod, resolvers, Vitest, Testing Library, MSW e Playwright sem versões incompatíveis.
 - **Requisitos relacionados:** RF-07–RF-16; RNF-05.
 - **Arquivos afetados:** `package.json`, `package-lock.json`, `vite.config.ts`, configurações de teste.
 - **Critério de pronto:** Pacotes e scripts essenciais instalados; setup de teste funcional e documentado.
 - **Teste a realizar:** Executar instalação, lint/typecheck/testes de fumaça.
 - **Commit sugerido:** `chore: configurar dependencias e qualidade`.
-- **Registro de execução:** teste `NÃO EXECUTADO` · evidência `—` · commit `—` · data `—`.
+- **Registro de execução, 2026-11-18:** instalados Router, Phosphor, RHF/Zod/resolvers, Tailwind/plugin, Vitest/jsdom/Testing Library, MSW e Playwright; criado setup Vitest e teste de fumaça. `npm run test`: PASSOU, 1 teste; `npm run typecheck`: PASSOU; `npm run build`: PASSOU; `npm audit --omit=dev`: PASSOU, 0 vulnerabilidades. `npm audit`: FALHOU com 6 registros altos do GHSA-fc5q-39xc-vjpf, incluindo agora `vitest@5.1.1` via `picomatch@4.0.7` e Vite; aceitação de risco de T002 não foi automaticamente estendida a T003. `lint` ainda não configurado, atribuído a T004. Integração Tailwind e testes E2E completos ficam nas tarefas próprias; compatibilidade abrangente das ferramentas ainda não foi demonstrada. Commit: NÃO REALIZADO. Pendência: decisão explícita sobre exposição adicional ou correção upstream validada.
+- **Insumo confirmado pelo responsável:** `image.png` e `image-1.png` a `image-13.png` são imagens de cafés presentes no `.pen`. Permanecem não rastreados e não foram movidos nem incluídos nesta tarefa; o mapeamento e a integração ao catálogo pertencem a T005.
+- **Decisão posterior:** o responsável estendeu a aceitação do GHSA-fc5q-39xc-vjpf para caminhos transitivos adicionais nas condições de desenvolvimento local; política e limitações centralizadas em TECH §11.4. O caminho adicional via Vitest permanece registrado, sem declarar a vulnerabilidade corrigida.
+- **Verificação final, 2026-11-18:** `npm ls --depth=0` retornou exit 0; Vite 8.3.8, Vitest 5.1.1 e plugin Tailwind 4.3.5 compartilham Vite compatível; listou também três pacotes extraneous já presentes em `node_modules`, não utilizados como dependências diretas. Plugin Tailwind registrado no Vite; tokens, reset e importação CSS permanecem em T006–T008. `npm run test` PASSOU (1 arquivo, 1 teste), com jsdom, Testing Library e jest-dom; `npm run typecheck` e `npm run build` PASSARAM; `npm exec playwright -- --version` PASSOU (1.65.1). `test`, `test:watch` e `test:e2e` definidos; configuração e testes E2E ficam em T038 e não foram executados. `lint` ainda não existe e será configurado em T004. `npm audit --json` FALHOU: seis registros altos, exclusivamente o advisory aceito GHSA-fc5q-39xc-vjpf; `npm audit --omit=dev` PASSOU: zero vulnerabilidades. Não se verificou compatibilidade de todos os fluxos futuros; correção e revisão antes de deploy permanecem obrigatórias.
 
 #### [ ] T004 — Definir lint, formatação e convenções
 
