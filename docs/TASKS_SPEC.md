@@ -17,6 +17,8 @@
 7. **Escopo fechado:** SPA frontend, catálogo local, React + TypeScript + Vite + Tailwind, Context API + reducer, React Router, Zod + RHF, Phosphor Icons; sem backend próprio, pagamento real ou autenticação.
 8. **Estabilidade do fluxo:** não confirmar pedidos com carrinho vazio, produto inválido, formulário inválido ou consulta ViaCEP não bem-sucedida para o CEP atual. Snapshot do último pedido deve ser salvo antes de limpar o carrinho.
 
+**Autorização por fase:** uma autorização explícita do responsável para uma fase permite executar sequencialmente todas as suas tarefas elegíveis, sem confirmação individual, preservando teste, evidência, checklist e commit separado por tarefa. Antes de iniciar, identificar tarefas, requisitos, dependências e critérios. Falhas devem ser tratadas no escopo; bloqueios, novos riscos relevantes e decisões externas exigem registro e interrupção da parte afetada. Tarefas independentes da mesma fase podem prosseguir com desvio documentado. Aplicar a política de segurança de `TECH_SPEC.md` §11.4. Ao encerrar, executar verificações integradas aplicáveis e relatar situação, arquivos, testes, commits, vulnerabilidades, pendências e prontidão para aprovação. Não avançar à fase seguinte, modificar o `.pen`, fazer push ou deploy sem autorização explícita apropriada.
+
 **Legenda:** `[ ] PENDENTE` (não iniciado), `[ ] EM ANDAMENTO` (execução em curso), `[ ] BLOQUEADA` (dependência impeditiva), `[x] CONCLUÍDA` (implementado, testado, registrado e commitado). Nunca usar `[x]` antes do cumprimento integral do DoD. Os comandos citados são metas do TECH; se scripts não existirem, configurá-los antes de executá-los.
 
 **Modelo de registro após cada tarefa** (substituir campos, sem inventar resultados):
