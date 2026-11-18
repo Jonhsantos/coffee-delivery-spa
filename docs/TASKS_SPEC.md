@@ -41,16 +41,16 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 
 ### Fase 0 — Preparação e referências
 
-#### [ ] T001 — Auditar repositório, SPECs e design
+#### [x] T001 — Auditar repositório, SPECs e design
 
-- **Status:** `EM ANDAMENTO` — inspeção e registro realizados; aguardando commit e fechamento.
+- **Status:** `CONCLUÍDA`.
 - **Objetivo:** Identificar estrutura atual, scripts, dependências, ativos e telas do `coffee-delivery.pen`; registrar lacunas sem inventar insumos.
 - **Requisitos relacionados:** RF-01, RF-15, RF-16; RNF-01, RNF-02.
 - **Arquivos afetados:** `coffee-delivery.pen`, `docs/PRD_SPEC.md`, `docs/TECH_SPEC.md`, `docs/TASKS_SPEC.md`, `AGENTS.md`.
 - **Critério de pronto:** Inventário de telas, componentes, breakpoints e pendências documentado; referências conflitantes sinalizadas.
 - **Teste a realizar:** Revisar manualmente o inventário contra o `.pen` e documentos.
 - **Commit sugerido:** `docs: auditar referencias e pendencias do projeto`.
-- **Registro de execução:** revisão manual pelo Pencil e conferência dos SPECs e do repositório `PASSOU` · evidência: inventário e decisões abaixo · commit inicial pendente · data `2026-11-18`.
+- **Registro de execução:** revisão manual pelo Pencil e conferência dos SPECs e do repositório `PASSOU` · evidência: inventário e decisões abaixo · commit `7fddbe4b2c53741196464b8bfcb7882f8b990720` — `docs: auditar referencias e pendencias do projeto` · data `2026-11-18`.
 
 **Inventário visual e técnico — T001**
 
@@ -616,6 +616,7 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 | Data | Tarefa | Alteração / resultado | Teste / evidência | Commit real | Status |
 | --- | --- | --- | --- | --- | --- |
 | — | — | Nenhuma tarefa executada na criação deste documento. | — | — | PENDENTE |
+| 2026-11-18 | T001 | Inventário visual, decisões, ativos e estado inicial do repositório registrados. | Inspeção Pencil e revisão manual dos SPECs e Git: PASSOU. | `7fddbe4b2c53741196464b8bfcb7882f8b990720` | CONCLUÍDA |
 
 **Pendências de insumo (verificar em T001):** disponibilidade e leitura de `coffee-delivery.pen`; imagens e catálogo definitivos; arquivo final da logo e dados reais da ferramenta de IA; breakpoints/frames de dark mode; scripts e configurações existentes; host de deploy. Não há autorização para inventar imagens, cores escuras oficiais, catálogo definitivo, logs, testes ou commits.
 
