@@ -5,5 +5,7 @@ import App from '../App'
 test('renderiza a base da aplicação', () => {
   render(<App />)
 
-  expect(screen.getByRole('heading', { name: 'Coffee Delivery' })).toBeInTheDocument()
+  expect(
+    screen.getByRole('heading', { name: 'Coffee Delivery' }),
+  ).toBeInTheDocument()
 })

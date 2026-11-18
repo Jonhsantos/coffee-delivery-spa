@@ -102,14 +102,14 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 
 #### [ ] T004 — Definir lint, formatação e convenções
 
-- **Status:** `PENDENTE`.
+- **Status:** `EM ANDAMENTO` — verificações realizadas; commit e registro final pendentes.
 - **Objetivo:** Ativar ESLint/Prettier, aliases quando necessários e regras de importação/componentização.
 - **Requisitos relacionados:** RF-01–RF-16; RNF-05.
 - **Arquivos afetados:** `eslint.config.*`, `.prettierrc*`, `tsconfig.json`, `AGENTS.md`, `package.json`.
 - **Critério de pronto:** Comandos `lint`, `format` e `typecheck` definidos e aprovados na base.
 - **Teste a realizar:** Executar `npm run lint`, `npm run typecheck` e verificação de formatação.
 - **Commit sugerido:** `chore: padronizar lint formatacao e tipos`.
-- **Registro de execução:** teste `NÃO EXECUTADO` · evidência `—` · commit `—` · data `—`.
+- **Registro de execução, 2026-11-18:** `npm install -D` PASSOU com alertas; `npm run lint`, `npm run format`, `npm run format:check`, `npm run typecheck`, `npm run test` (1 teste) e `npm run build` PASSARAM; `npm audit` FALHOU com 12 registros altos do único advisory aceito GHSA-fc5q-39xc-vjpf, incluindo novo caminho `typescript-eslint` → `typescript-estree` → `tinyglobby` → `picomatch`; `npm audit --omit=dev` PASSOU, zero vulnerabilidades. Compatibilidade das versões instaladas conferida com `npm ls`; nenhuma correção de segurança foi afirmada. Lint usa configurações recomendadas JS/TypeScript, hooks React e React Refresh; Prettier verifica arquivos da aplicação/configuração, preservando os SPECs e `.pen`. Aliases não foram necessários; importações relativas existentes foram mantidas. Detalhes e restrições do advisory em TECH §11.4. Commit pendente.
 
 #### [ ] T005 — Definir catálogo e ativos autorizados
 
