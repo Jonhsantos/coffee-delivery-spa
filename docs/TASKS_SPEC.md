@@ -137,16 +137,16 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 - **Commit sugerido:** `style: definir paleta e tokens oficiais`.
 - **Registro de execução, 2026-11-18:** comparação automatizada com os 16 HEX do PRD: PASSOU; inspeção do CSS computado no navegador: fundo `rgb(250, 250, 250)`, texto `rgb(39, 34, 33)` e token yellow `#dbac2c`, PASSOU; `npm run lint`, `npm run typecheck` e `npm run build`: PASSARAM. Tokens claros e aliases centralizados; tema escuro permanece para T034. Desvio de ordem: T005 da fase anterior permanece pendente; T006 é independente do catálogo. Commit `98db58c04c00c6973537acb5cf965951e557c575`.
 
-#### [ ] T007 — Implementar escala tipográfica
+#### [x] T007 — Implementar escala tipográfica
 
-- **Status:** `EM ANDAMENTO` — escala verificada; commit pendente.
+- **Status:** `CONCLUÍDA`.
 - **Objetivo:** Integrar Baloo 2 (títulos) e Roboto (textos), pesos, line-height e tamanhos oficiais.
 - **Requisitos relacionados:** RF-01, RF-15, RF-16; RNF-01, RNF-02.
 - **Arquivos afetados:** `src/styles/typography.css`, `src/styles/globals.css`, `index.html`.
 - **Critério de pronto:** 12 estilos oficiais documentados e aplicáveis; fallback legível; sem cortes com zoom.
 - **Teste a realizar:** Verificar 5 estilos de título e 7 estilos de texto/controle contra PRD §12.2.
 - **Commit sugerido:** `style: implementar tipografia oficial`.
-- **Registro de execução, 2026-11-18:** conferidos no navegador os 12 estilos computados, tamanhos, pesos e line-height contra PRD; `document.fonts.load` carregou Baloo 2 700/800 e Roboto 400/700: PASSOU. Em viewport 320px com zoom CSS 200%, a base existente apresentou largura sem overflow: PASSOU, sem substituir teste futuro de zoom do navegador e fluxo completo. `npm run lint`, `npm run typecheck`, `npm run format:check` e `npm run build`: PASSARAM. Sem catálogo nem telas finais, aplicação da escala aos componentes será verificada nas tarefas correspondentes. T005 permanece pendente; T007 é independente do catálogo. Commit pendente.
+- **Registro de execução, 2026-11-18:** conferidos no navegador os 12 estilos computados, tamanhos, pesos e line-height contra PRD; `document.fonts.load` carregou Baloo 2 700/800 e Roboto 400/700: PASSOU. Em viewport 320px com zoom CSS 200%, a base existente apresentou largura sem overflow: PASSOU, sem substituir teste futuro de zoom do navegador e fluxo completo. `npm run lint`, `npm run typecheck`, `npm run format:check` e `npm run build`: PASSARAM. Sem catálogo nem telas finais, aplicação da escala aos componentes será verificada nas tarefas correspondentes. T005 permanece pendente; T007 é independente do catálogo. Commit `4d43bc721d1c049f57ca0c40e5b1eefa63ba082c`.
 
 #### [ ] T008 — Configurar Tailwind, reset e breakpoints
 
