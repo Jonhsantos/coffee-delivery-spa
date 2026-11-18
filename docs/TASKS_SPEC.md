@@ -100,16 +100,16 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 - **Verificação final, 2026-11-18:** `npm ls --depth=0` retornou exit 0; Vite 8.3.8, Vitest 5.1.1 e plugin Tailwind 4.3.5 compartilham Vite compatível; listou também três pacotes extraneous já presentes em `node_modules`, não utilizados como dependências diretas. Plugin Tailwind registrado no Vite; tokens, reset e importação CSS permanecem em T006–T008. `npm run test` PASSOU (1 arquivo, 1 teste), com jsdom, Testing Library e jest-dom; `npm run typecheck` e `npm run build` PASSARAM; `npm exec playwright -- --version` PASSOU (1.65.1). `test`, `test:watch` e `test:e2e` definidos; configuração e testes E2E ficam em T038 e não foram executados. `lint` ainda não existe e será configurado em T004. `npm audit --json` FALHOU: seis registros altos, exclusivamente o advisory aceito GHSA-fc5q-39xc-vjpf; `npm audit --omit=dev` PASSOU: zero vulnerabilidades. Não se verificou compatibilidade de todos os fluxos futuros; correção e revisão antes de deploy permanecem obrigatórias.
 - **Commit da implementação:** `2b1700be3d7e517a7e2a7b03ceef0aaf029b8f52` — `chore: configurar dependencias e politica de seguranca`.
 
-#### [ ] T004 — Definir lint, formatação e convenções
+#### [x] T004 — Definir lint, formatação e convenções
 
-- **Status:** `EM ANDAMENTO` — verificações realizadas; commit e registro final pendentes.
+- **Status:** `CONCLUÍDA` — com ressalva do advisory aceita para desenvolvimento local.
 - **Objetivo:** Ativar ESLint/Prettier, aliases quando necessários e regras de importação/componentização.
 - **Requisitos relacionados:** RF-01–RF-16; RNF-05.
 - **Arquivos afetados:** `eslint.config.*`, `.prettierrc*`, `tsconfig.json`, `AGENTS.md`, `package.json`.
 - **Critério de pronto:** Comandos `lint`, `format` e `typecheck` definidos e aprovados na base.
 - **Teste a realizar:** Executar `npm run lint`, `npm run typecheck` e verificação de formatação.
 - **Commit sugerido:** `chore: padronizar lint formatacao e tipos`.
-- **Registro de execução, 2026-11-18:** `npm install -D` PASSOU com alertas; `npm run lint`, `npm run format`, `npm run format:check`, `npm run typecheck`, `npm run test` (1 teste) e `npm run build` PASSARAM; `npm audit` FALHOU com 12 registros altos do único advisory aceito GHSA-fc5q-39xc-vjpf, incluindo novo caminho `typescript-eslint` → `typescript-estree` → `tinyglobby` → `picomatch`; `npm audit --omit=dev` PASSOU, zero vulnerabilidades. Compatibilidade das versões instaladas conferida com `npm ls`; nenhuma correção de segurança foi afirmada. Lint usa configurações recomendadas JS/TypeScript, hooks React e React Refresh; Prettier verifica arquivos da aplicação/configuração, preservando os SPECs e `.pen`. Aliases não foram necessários; importações relativas existentes foram mantidas. Detalhes e restrições do advisory em TECH §11.4. Commit pendente.
+- **Registro de execução, 2026-11-18:** `npm install -D` PASSOU com alertas; `npm run lint`, `npm run format`, `npm run format:check`, `npm run typecheck`, `npm run test` (1 teste) e `npm run build` PASSARAM; `npm audit` FALHOU com 12 registros altos do único advisory aceito GHSA-fc5q-39xc-vjpf, incluindo novo caminho `typescript-eslint` → `typescript-estree` → `tinyglobby` → `picomatch`; `npm audit --omit=dev` PASSOU, zero vulnerabilidades. Compatibilidade das versões instaladas conferida com `npm ls`; nenhuma correção de segurança foi afirmada. Lint usa configurações recomendadas JS/TypeScript, hooks React e React Refresh; Prettier verifica arquivos da aplicação/configuração, preservando os SPECs e `.pen`. Aliases não foram necessários; importações relativas existentes foram mantidas. Detalhes e restrições do advisory em TECH §11.4. Commit: `ad3fb5e4851c819b80d6fee5780b33352190e114` — `chore: padronizar lint formatacao e tipos`.
 
 #### [ ] T005 — Definir catálogo e ativos autorizados
 
@@ -633,6 +633,7 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 | 2026-11-18 | T001 | Reavaliação após adição de imagens: prancha com 14 cafés renderizada; pendências dos frames e referência de imagem registradas. | Inspeção Pencil dos nós `kvmSF`, `ecpPI` e `xyxIT` e `git status`: PASSOU. | Ver histórico Git para o commit desta atualização. | CONCLUÍDA |
 | 2026-11-18 | T002 | Base React/Vite/TypeScript, host local e exceção temporária autorizada para desenvolvimento local. | Dev, typecheck e build PASSARAM; audit completo FALHOU com 5 alertas altos; audit de produção PASSOU. | `99075912c5b81fbb06721cd506e57cef09e4479a` | CONCLUÍDA COM RESSALVA |
 | 2026-11-18 | T003 | Dependências, setup de testes e política de vulnerabilidades. | Teste de fumaça, typecheck e build PASSARAM; audit completo FALHOU com 6 registros do advisory aceito; audit de produção PASSOU. | `2b1700be3d7e517a7e2a7b03ceef0aaf029b8f52` | CONCLUÍDA COM RESSALVA |
+| 2026-11-18 | T004 | ESLint, Prettier e caminho adicional do advisory documentado. | Lint, formatação, typecheck, teste e build PASSARAM; audit completo FALHOU com 12 registros do advisory aceito; audit de produção PASSOU. | `ad3fb5e4851c819b80d6fee5780b33352190e114` | CONCLUÍDA COM RESSALVA |
 
 **Pendências de insumo (verificar em T001):** disponibilidade e leitura de `coffee-delivery.pen`; imagens e catálogo definitivos; arquivo final da logo e dados reais da ferramenta de IA; breakpoints/frames de dark mode; scripts e configurações existentes; host de deploy. Não há autorização para inventar imagens, cores escuras oficiais, catálogo definitivo, logs, testes ou commits.
 
