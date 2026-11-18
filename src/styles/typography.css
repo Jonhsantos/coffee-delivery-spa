@@ -1,0 +1,85 @@
+:root {
+  --font-title: 'Baloo 2', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+.type-title-xl,
+.type-title-l,
+.type-title-m,
+.type-title-s,
+.type-title-xs {
+  font-family: var(--font-title);
+  line-height: 1.3;
+}
+
+.type-title-xl,
+.type-title-l,
+.type-title-m {
+  font-weight: 800;
+}
+
+.type-title-s,
+.type-title-xs {
+  font-weight: 700;
+}
+
+.type-title-xl {
+  font-size: 3rem;
+}
+.type-title-l {
+  font-size: 2rem;
+}
+.type-title-m {
+  font-size: 1.5rem;
+}
+.type-title-s {
+  font-size: 1.25rem;
+}
+.type-title-xs {
+  font-size: 1.125rem;
+}
+
+.type-text-l,
+.type-text-m,
+.type-text-s,
+.type-text-xs,
+.type-tag,
+.type-button-g,
+.type-button-m {
+  font-family: var(--font-body);
+  line-height: 1.3;
+}
+
+.type-text-l {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.type-text-m {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.type-text-s {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.type-text-xs {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.type-tag {
+  font-size: 0.625rem;
+  font-weight: 700;
+}
+.type-button-g {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.type-button-m {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.type-bold {
+  font-weight: 700;
+}

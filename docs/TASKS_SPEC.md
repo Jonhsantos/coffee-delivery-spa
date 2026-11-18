@@ -139,14 +139,14 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 
 #### [ ] T007 — Implementar escala tipográfica
 
-- **Status:** `PENDENTE`.
+- **Status:** `EM ANDAMENTO` — escala verificada; commit pendente.
 - **Objetivo:** Integrar Baloo 2 (títulos) e Roboto (textos), pesos, line-height e tamanhos oficiais.
 - **Requisitos relacionados:** RF-01, RF-15, RF-16; RNF-01, RNF-02.
 - **Arquivos afetados:** `src/styles/typography.css`, `src/styles/globals.css`, `index.html`.
 - **Critério de pronto:** 12 estilos oficiais documentados e aplicáveis; fallback legível; sem cortes com zoom.
 - **Teste a realizar:** Verificar 5 estilos de título e 7 estilos de texto/controle contra PRD §12.2.
 - **Commit sugerido:** `style: implementar tipografia oficial`.
-- **Registro de execução:** teste `NÃO EXECUTADO` · evidência `—` · commit `—` · data `—`.
+- **Registro de execução, 2026-11-18:** conferidos no navegador os 12 estilos computados, tamanhos, pesos e line-height contra PRD; `document.fonts.load` carregou Baloo 2 700/800 e Roboto 400/700: PASSOU. Em viewport 320px com zoom CSS 200%, a base existente apresentou largura sem overflow: PASSOU, sem substituir teste futuro de zoom do navegador e fluxo completo. `npm run lint`, `npm run typecheck`, `npm run format:check` e `npm run build`: PASSARAM. Sem catálogo nem telas finais, aplicação da escala aos componentes será verificada nas tarefas correspondentes. T005 permanece pendente; T007 é independente do catálogo. Commit pendente.
 
 #### [ ] T008 — Configurar Tailwind, reset e breakpoints
 
