@@ -85,9 +85,9 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 - **Restrições e encerramento da exceção:** `vite.config.ts` fixa o host padrão em `127.0.0.1`; não sobrescrever para interfaces públicas, nem usar túneis ou proxies, nem introduzir padrões glob não confiáveis. A opção de linha de comando pode sobrescrever essa configuração e não deve ser usada para expor o servidor. Manter `npm audit` ativo e não ocultar a falha. Monitorar o advisory e substituir a exceção por correção publicada assim que validada. Antes de qualquer deploy, reavaliar a vulnerabilidade, o ambiente de build e dependências de produção; esta aceitação não autoriza publicação.
 - **Verificação da configuração local, 2026-11-18:** `npm run dev` PASSOU, com `netstat` indicando `127.0.0.1:5173` e requisição HTTP retornando 200 com entrada `/src/main.tsx`; processo encerrado após o teste. `npm run typecheck` e `npm run build` PASSARAM; `npm audit` FALHOU com 5 registros altos; `npm audit --omit=dev` PASSOU com 0 vulnerabilidades. `lint` ainda não configurado. Nenhuma versão foi alterada nem o advisory suprimido.
 
-#### [ ] T003 — Instalar dependências e configurar ferramentas
+#### [x] T003 — Instalar dependências e configurar ferramentas
 
-- **Status:** `EM ANDAMENTO` — aceitação estendida pelo responsável; verificações finais em curso.
+- **Status:** `CONCLUÍDA` — com ressalva de segurança aceita para desenvolvimento local.
 - **Objetivo:** Configurar Router, Tailwind, Phosphor, React Hook Form, Zod, resolvers, Vitest, Testing Library, MSW e Playwright sem versões incompatíveis.
 - **Requisitos relacionados:** RF-07–RF-16; RNF-05.
 - **Arquivos afetados:** `package.json`, `package-lock.json`, `vite.config.ts`, configurações de teste.
@@ -98,6 +98,7 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 - **Insumo confirmado pelo responsável:** `image.png` e `image-1.png` a `image-13.png` são imagens de cafés presentes no `.pen`. Permanecem não rastreados e não foram movidos nem incluídos nesta tarefa; o mapeamento e a integração ao catálogo pertencem a T005.
 - **Decisão posterior:** o responsável estendeu a aceitação do GHSA-fc5q-39xc-vjpf para caminhos transitivos adicionais nas condições de desenvolvimento local; política e limitações centralizadas em TECH §11.4. O caminho adicional via Vitest permanece registrado, sem declarar a vulnerabilidade corrigida.
 - **Verificação final, 2026-11-18:** `npm ls --depth=0` retornou exit 0; Vite 8.3.8, Vitest 5.1.1 e plugin Tailwind 4.3.5 compartilham Vite compatível; listou também três pacotes extraneous já presentes em `node_modules`, não utilizados como dependências diretas. Plugin Tailwind registrado no Vite; tokens, reset e importação CSS permanecem em T006–T008. `npm run test` PASSOU (1 arquivo, 1 teste), com jsdom, Testing Library e jest-dom; `npm run typecheck` e `npm run build` PASSARAM; `npm exec playwright -- --version` PASSOU (1.65.1). `test`, `test:watch` e `test:e2e` definidos; configuração e testes E2E ficam em T038 e não foram executados. `lint` ainda não existe e será configurado em T004. `npm audit --json` FALHOU: seis registros altos, exclusivamente o advisory aceito GHSA-fc5q-39xc-vjpf; `npm audit --omit=dev` PASSOU: zero vulnerabilidades. Não se verificou compatibilidade de todos os fluxos futuros; correção e revisão antes de deploy permanecem obrigatórias.
+- **Commit da implementação:** `2b1700be3d7e517a7e2a7b03ceef0aaf029b8f52` — `chore: configurar dependencias e politica de seguranca`.
 
 #### [ ] T004 — Definir lint, formatação e convenções
 
@@ -631,6 +632,7 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 | 2026-11-18 | T001 | Inventário visual, decisões, ativos e estado inicial do repositório registrados. | Inspeção Pencil e revisão manual dos SPECs e Git: PASSOU. | `7fddbe4b2c53741196464b8bfcb7882f8b990720` | CONCLUÍDA |
 | 2026-11-18 | T001 | Reavaliação após adição de imagens: prancha com 14 cafés renderizada; pendências dos frames e referência de imagem registradas. | Inspeção Pencil dos nós `kvmSF`, `ecpPI` e `xyxIT` e `git status`: PASSOU. | Ver histórico Git para o commit desta atualização. | CONCLUÍDA |
 | 2026-11-18 | T002 | Base React/Vite/TypeScript, host local e exceção temporária autorizada para desenvolvimento local. | Dev, typecheck e build PASSARAM; audit completo FALHOU com 5 alertas altos; audit de produção PASSOU. | `99075912c5b81fbb06721cd506e57cef09e4479a` | CONCLUÍDA COM RESSALVA |
+| 2026-11-18 | T003 | Dependências, setup de testes e política de vulnerabilidades. | Teste de fumaça, typecheck e build PASSARAM; audit completo FALHOU com 6 registros do advisory aceito; audit de produção PASSOU. | `2b1700be3d7e517a7e2a7b03ceef0aaf029b8f52` | CONCLUÍDA COM RESSALVA |
 
 **Pendências de insumo (verificar em T001):** disponibilidade e leitura de `coffee-delivery.pen`; imagens e catálogo definitivos; arquivo final da logo e dados reais da ferramenta de IA; breakpoints/frames de dark mode; scripts e configurações existentes; host de deploy. Não há autorização para inventar imagens, cores escuras oficiais, catálogo definitivo, logs, testes ou commits.
 
