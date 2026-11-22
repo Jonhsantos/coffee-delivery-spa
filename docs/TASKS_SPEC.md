@@ -201,14 +201,14 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 
 #### [ ] T012 — Criar utilitário monetário e frete
 
-- **Status:** `PENDENTE`.
+- **Status:** `EM ANDAMENTO` — cálculos e testes concluídos; commit pendente.
 - **Objetivo:** Estabelecer `DELIVERY_FEE_CENTS = 500`, subtotal e total em centavos; vazio sem frete.
 - **Requisitos relacionados:** RF-10; RN-03, RN-04.
 - **Arquivos afetados:** `src/utils/money.ts`, `src/tests/money.test.ts`.
 - **Critério de pronto:** Formatação BRL correta; sem float monetário nas operações; erro para overflow.
 - **Teste a realizar:** Testar soma de itens, frete R$ 5,00, total, vazio e limites inteiros.
 - **Commit sugerido:** `feat: centralizar calculos monetarios`.
-- **Registro de execução:** teste `NÃO EXECUTADO` · evidência `—` · commit `—` · data `—`.
+- **Registro de execução, 2026-11-22:** `npm run test` PASSOU (17 testes no total; valores, vazio, entradas inválidas e limites); `npm run typecheck`, `lint` e `format:check` PASSARAM. `DELIVERY_FEE_CENTS` centralizado; operações em inteiros seguros; formatação usa partes inteiras BigInt para preservar centavos mesmo no limite seguro. Commit pendente.
 
 #### [ ] T013 — Implementar reducer puro do carrinho
 
