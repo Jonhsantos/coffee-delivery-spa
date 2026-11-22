@@ -12,6 +12,30 @@
   width: 85px;
   height: 40px;
 }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.location,
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  border-radius: 6px;
+  color: var(--color-purple-dark);
+  background: var(--color-purple-light);
+  font-size: 14px;
+}
+[data-theme='dark'] .header img {
+  background: var(--color-background);
+  border-radius: 4px;
+}
+.theme-toggle {
+  cursor: pointer;
+  min-height: 38px;
+}
 .cart-link,
 .add-button {
   position: relative;
@@ -60,6 +84,7 @@ h3 {
 .hero-image {
   width: 100%;
   height: 360px;
+  object-fit: contain;
 }
 .benefits {
   display: grid;
@@ -167,6 +192,295 @@ h3 {
   color: white;
   background: var(--color-purple-dark);
   cursor: pointer;
+}
+.checkout {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+.checkout h1,
+.checkout > form > div > h2 {
+  font: 700 18px/1.3 var(--font-title);
+  margin-bottom: 15px;
+}
+.checkout-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 640px) minmax(0, 448px);
+  gap: 32px;
+}
+.checkout-panel {
+  background: var(--surface-card);
+  padding: 40px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.section-heading {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  color: var(--text-secondary);
+}
+.section-heading > svg {
+  color: var(--color-yellow-dark);
+  flex: none;
+}
+.section-heading h2 {
+  font: 400 16px/1.3 var(--font-body);
+}
+.section-heading p {
+  font-size: 14px;
+  margin-top: 2px;
+}
+.payment-heading > svg {
+  color: var(--color-purple);
+}
+.address-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr 60px;
+  gap: 16px 12px;
+}
+.address-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+}
+.address-grid input {
+  min-width: 0;
+  width: 100%;
+  padding: 12px;
+  background: var(--surface-input);
+  border: 1px solid var(--color-base-button);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+.address-grid label span {
+  color: var(--color-error);
+}
+.cep-field {
+  grid-column: 1 / -1;
+}
+.cep-field input {
+  max-width: 200px;
+}
+.field-street {
+  grid-column: 1 / -1;
+}
+.field-complement {
+  grid-column: 2 / -1;
+}
+.payment-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.payment-options input {
+  position: absolute;
+  opacity: 0;
+}
+.payment-options span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 51px;
+  padding: 12px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: var(--surface-input);
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.payment-options svg {
+  color: var(--color-purple);
+  flex: none;
+}
+.payment-options input:checked + span {
+  border-color: var(--color-purple);
+  background: var(--color-purple-light);
+  color: var(--color-base-title);
+}
+.payment-options input:focus-visible + span {
+  outline: 2px solid var(--color-purple);
+}
+.summary-panel {
+  border-radius: 6px 44px;
+}
+.cart-row {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  align-items: start;
+  gap: 20px;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--color-base-button);
+}
+.cart-row img {
+  width: 64px;
+}
+.cart-row strong {
+  white-space: nowrap;
+  font-size: 16px;
+}
+.row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.cart-quantity,
+.remove {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-input);
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 12px;
+}
+.cart-quantity button,
+.remove svg {
+  color: var(--color-purple);
+}
+.cart-quantity button {
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.remove {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.totals {
+  display: grid;
+  gap: 12px;
+}
+.totals div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+.totals div:last-child {
+  font-size: 20px;
+  font-weight: 700;
+}
+.confirm {
+  width: 100%;
+  margin-top: 24px;
+  padding: 12px;
+  border-radius: 6px;
+  background: var(--color-yellow);
+  color: var(--color-base-title);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.success {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.success h1 {
+  color: var(--color-yellow-dark);
+  font-size: 32px;
+  line-height: 1.3;
+}
+.success > p {
+  font-size: 20px;
+}
+.success-layout {
+  display: grid;
+  grid-template-columns: 526px 1fr;
+  gap: 100px;
+  align-items: center;
+  margin-top: 40px;
+}
+.success-info {
+  border: 1px solid var(--color-purple);
+  border-radius: 6px 36px;
+  padding: 40px;
+  display: grid;
+  gap: 32px;
+}
+.success-info > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.success-info svg {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  border-radius: 50%;
+  background: var(--color-purple);
+  color: white;
+}
+.success-info > div:nth-child(2) svg {
+  background: var(--color-yellow);
+}
+.success-info > div:nth-child(3) svg {
+  background: var(--color-yellow-dark);
+}
+.success-illustration {
+  max-width: 100%;
+}
+.order-details {
+  margin-top: 32px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.order-details h2 {
+  font-size: 20px;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-purple);
+  outline-offset: 2px;
+}
+@media (max-width: 1000px) {
+  .checkout-grid,
+  .success-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .success-illustration {
+    width: 100%;
+    max-width: 492px;
+  }
+}
+@media (max-width: 650px) {
+  .location {
+    display: none;
+  }
+  .checkout-panel {
+    padding: 20px;
+  }
+  .address-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .field-street,
+  .field-complement {
+    grid-column: 1 / -1;
+  }
+  .payment-options {
+    grid-template-columns: 1fr;
+  }
+  .cart-row {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 12px;
+  }
+  .cart-row img {
+    width: 48px;
+  }
+  .cart-row strong {
+    grid-column: 2;
+  }
+  .success-info {
+    padding: 24px;
+  }
 }
 @media (max-width: 1152px) {
   .hero {

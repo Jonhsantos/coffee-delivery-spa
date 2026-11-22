@@ -1,12 +1,24 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router'
-import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react'
-import { useState } from 'react'
+import {
+  Coffee,
+  MapPin,
+  Moon,
+  Package,
+  ShoppingCart,
+  Sun,
+  Timer,
+} from '@phosphor-icons/react'
+import { useContext, useState } from 'react'
 import logo from './assets/sKMTC.svg'
 import { QuantityControl } from './components/QuantityControl'
 import { coffees } from './data/coffees'
 import { useCart } from './hooks/useCart'
 import type { Coffee as CoffeeType } from './types/coffee'
 import { formatBRL } from './utils/money'
+import Checkout from './pages/Checkout'
+import Success from './pages/Success'
+import { ThemeContext } from './contexts/ThemeContext'
+import { ThemeProvider } from './contexts/ThemeProvider'
 import './styles/app.css'
 
 function Card({ coffee }: { coffee: CoffeeType }) {
@@ -75,7 +87,7 @@ function Home() {
             </li>
           </ul>
         </div>
-        <div className="hero-image" aria-hidden="true" />
+        <img className="hero-image" src={coffees[0].imageUrl} alt="" />
       </section>
       <section className="container catalog">
         <h2>Nossos cafés</h2>
@@ -100,32 +112,56 @@ function Placeholder({ title }: { title: string }) {
   )
 }
 
-export default function App() {
+function Layout() {
   const { unitCount } = useCart()
+  const { theme, toggleTheme } = useContext(ThemeContext)
   return (
     <BrowserRouter>
       <header className="container header">
         <Link to="/" aria-label="Café Rodinhas - início">
           <img src={logo} alt="Café Rodinhas" />
         </Link>
-        <Link
-          className="cart-link"
-          to="/checkout"
-          aria-label={`Carrinho: ${unitCount} unidades`}
-        >
-          <ShoppingCart size={22} weight="fill" />
-          {unitCount > 0 && <span>{unitCount}</span>}
-        </Link>
+        <div className="header-actions">
+          <span className="location">
+            <MapPin size={22} weight="fill" /> Porto Alegre, RS
+          </span>
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={
+              theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro'
+            }
+          >
+            {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+          </button>
+          <Link
+            className="cart-link"
+            to="/checkout"
+            aria-label={`Carrinho: ${unitCount} unidades`}
+          >
+            <ShoppingCart size={22} weight="fill" />
+            {unitCount > 0 && <span>{unitCount}</span>}
+          </Link>
+        </div>
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/checkout" element={<Placeholder title="Checkout" />} />
-        <Route path="/success" element={<Placeholder title="Confirmação" />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/success" element={<Success />} />
         <Route
           path="*"
           element={<Placeholder title="Página não encontrada" />}
         />
       </Routes>
     </BrowserRouter>
+  )
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <Layout />
+    </ThemeProvider>
   )
 }
