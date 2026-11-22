@@ -1,5 +1,15 @@
+@import 'tailwindcss';
 @import './tokens.css';
 @import './typography.css';
+
+@theme inline {
+  --color-surface-page: var(--surface-page);
+  --color-surface-card: var(--surface-card);
+  --color-surface-input: var(--surface-input);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+}
 
 body {
   background-color: var(--surface-page);

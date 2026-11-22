@@ -150,14 +150,14 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 
 #### [ ] T008 — Configurar Tailwind, reset e breakpoints
 
-- **Status:** `PENDENTE`.
+- **Status:** `EM ANDAMENTO` — implementação e verificações realizadas; commit pendente.
 - **Objetivo:** Habilitar Tailwind com tokens CSS semânticos; mapear responsividade conforme `.pen`, começando em 320px.
 - **Requisitos relacionados:** RF-14, RF-15; RNF-01, RNF-02.
 - **Arquivos afetados:** `src/styles/globals.css`, `src/styles/tokens.css`, `src/App.tsx`.
 - **Critério de pronto:** Classes funcionam, layout base não causa rolagem horizontal a 320px; sem breakpoints inventados como oficiais.
 - **Teste a realizar:** Inspecionar viewport 320px/desktop e CSS compilado.
 - **Commit sugerido:** `style: configurar tailwind e base responsiva`.
-- **Registro de execução:** teste `NÃO EXECUTADO` · evidência `—` · commit `—` · data `—`.
+- **Registro de execução, 2026-11-22:** Tailwind v4 importado com reset e aliases semânticos `@theme inline`; no navegador, CSS compilado contém `bg-surface-page` e `text-text-primary`, com fundo `rgb(250, 250, 250)` e texto `rgb(39, 34, 33)`; corpo com margem zero. Viewports 320 e 1440 px: largura de rolagem igual à viewport na base atual. `npm run lint`, `typecheck`, `test` (1 teste), `build` e `format:check` PASSARAM. Breakpoints padrão são escolhas técnicas, não definidos como oficiais. Verificação restrita à base, não ao fluxo final; console registra 404 de favicon ainda ausente (T010). O responsável autorizou usar o `.pen` atualmente modificado como referência; arquivo preservado. T005 segue pendente e é independente desta tarefa. Commit pendente.
 
 #### [ ] T009 — Definir iconografia Phosphor
 
