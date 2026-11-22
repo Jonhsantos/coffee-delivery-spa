@@ -181,6 +181,8 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 - **Commit sugerido:** `feat: integrar identidade e favicon`.
 - **Registro de avaliação, 2026-11-22:** buscas em `src/assets/`, `public/` e nomes de arquivos com `logo` não identificaram ativo de logo; `README.md` e Header não existem. A referência visual contém marca, mas não comprova aprovação da logo original ou uso de IA. Favicon no navegador: 404; teste de integração e aderência: NÃO EXECUTÁVEL sem ativo aprovado e Header. Desbloqueio: responsável fornecer ou identificar e aprovar ativo e informações reais disponíveis; integrar quando Header estiver implementado. Não foi criada logo substituta.
 
+**Verificação integrada da Fase 1, 2026-11-22:** `npm run lint`, `npm run typecheck`, `npm run test` (1 teste), `npm run build` e `npm run format:check` passaram na base após T008; inspeção de 320/1440 px limitada à tela atual. `npm audit` e `npm audit --omit=dev` retornaram zero vulnerabilidades nesta execução, diferentemente do relatório anterior de 12 registros do GHSA-fc5q-39xc-vjpf; não houve alteração de dependências nesta retomada e o resultado, isoladamente, não comprova correção do advisory ou elimina a necessidade de reavaliação antes do deploy. Fase não pronta para aprovação: T009 e T010 bloqueadas; T005 da fase anterior permanece pendente.
+
 ### Fase 2 — Domínio, carrinho e persistência
 
 #### [ ] T011 — Criar contratos e tipos de domínio
