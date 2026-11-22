@@ -115,14 +115,14 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 
 #### [ ] T005 — Definir catálogo e ativos autorizados
 
-- **Status:** `PENDENTE`.
+- **Status:** `EM ANDAMENTO` — catálogo e verificações concluídos; commit pendente.
 - **Objetivo:** Localizar imagens, nomes, preços e tags aprovados; criar arquivo local tipado sem inventar conteúdo final.
 - **Requisitos relacionados:** RF-01, RF-16; RN-08.
 - **Arquivos afetados:** `src/data/coffees.ts`, `src/assets/`, `src/types/coffee.ts`.
 - **Critério de pronto:** Itens têm IDs únicos, preços em centavos e links de imagens válidos; pendências explícitas.
 - **Teste a realizar:** Validar IDs únicos, números inteiros seguros e renderização básica de imagens.
 - **Commit sugerido:** `feat: estruturar catalogo tipado de cafes`.
-- **Registro de execução:** teste `NÃO EXECUTADO` · evidência `—` · commit `—` · data `—`.
+- **Registro de execução, 2026-11-22:** 14 produtos, nomes, descrições, preço de R$ 9,90 e tags ativas extraídos dos cartões do `.pen`; categorias usam a primeira tag de cada cartão. Associação das 14 imagens obtida no quadro de imagens do `.pen`, incluindo `image-13.png` no grupo `Type=Expresso Cremoso`; cópias em `src/assets/coffees/`, sem mover os originais. Os cartões do desenho têm referências de imagem ausentes ou incompletas; o quadro de imagens forneceu o mapeamento. Teste automatizado confirma 14 IDs e imagens únicos e preços inteiros positivos; `npm run test` PASSOU (29 testes), `lint`, `typecheck`, `build` e `format:check` PASSARAM. No navegador, as 14 imagens foram decodificadas com 200×200 px; sua apresentação nos cards finais ainda depende da Home. Commit pendente.
 
 ### Fase 1 — Design system e fundação visual
 
