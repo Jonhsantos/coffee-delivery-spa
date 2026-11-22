@@ -173,7 +173,7 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 
 #### [ ] T010 — Integrar logo, favicon e documentação da marca
 
-- **Status:** `BLOQUEADA` — logo original aprovada e informações de criação não identificadas; Header ainda inexistente.
+- **Status:** `BLOQUEADA PARCIALMENTE` — logo aprovada e favicon criados; integração e verificação no Header dependem do componente ainda inexistente.
 - **Objetivo:** Usar logo original aprovada; gerar favicon a partir dela e registrar uso real de IA sem atribuições presumidas.
 - **Requisitos relacionados:** RF-16; RNF-02.
 - **Arquivos afetados:** `src/assets/`, `public/`, `index.html`, `README.md`, `docs/brand.md` (opcional).
@@ -181,8 +181,9 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 - **Teste a realizar:** Conferir assets reais, favicon no navegador e aderência ao `.pen`.
 - **Commit sugerido:** `feat: integrar identidade e favicon`.
 - **Registro de avaliação, 2026-11-22:** buscas em `src/assets/`, `public/` e nomes de arquivos com `logo` não identificaram ativo de logo; `README.md` e Header não existem. A referência visual contém marca, mas não comprova aprovação da logo original ou uso de IA. Favicon no navegador: 404; teste de integração e aderência: NÃO EXECUTÁVEL sem ativo aprovado e Header. Desbloqueio: responsável fornecer ou identificar e aprovar ativo e informações reais disponíveis; integrar quando Header estiver implementado. Não foi criada logo substituta.
+- **Atualização, 2026-11-22:** responsável aprovou proposta de copo com rodinhas gerada com auxílio de IA no Pencil. Símbolo exportado em `src/assets/logo-cafe-rodinhas.svg`, favicon derivado em `public/favicon.svg`, vínculo em `index.html` e informações em `docs/brand.md`. Navegador carregou favicon SVG com HTTP 200 e decodificação 64×64; `npm run lint`, `typecheck`, `test` (1 teste), `build` e `format:check` passaram. Header permanece inexistente; integração, acessibilidade e aderência no Header não verificadas. Tarefa não concluída; alterações preexistentes do `.pen` preservadas fora do commit.
 
-**Verificação integrada da Fase 1, 2026-11-22:** `npm run lint`, `npm run typecheck`, `npm run test` (1 teste), `npm run build` e `npm run format:check` passaram na base após T008; inspeção de 320/1440 px limitada à tela atual. `npm audit` e `npm audit --omit=dev` retornaram zero vulnerabilidades nesta execução, diferentemente do relatório anterior de 12 registros do GHSA-fc5q-39xc-vjpf; não houve alteração de dependências nesta retomada e o resultado, isoladamente, não comprova correção do advisory ou elimina a necessidade de reavaliação antes do deploy. Fase não pronta para aprovação: T009 e T010 bloqueadas; T005 da fase anterior permanece pendente.
+**Verificação integrada da Fase 1, 2026-11-22:** `npm run lint`, `npm run typecheck`, `npm run test` (1 teste), `npm run build` e `npm run format:check` passaram na base após T008; inspeção de 320/1440 px limitada à tela atual. `npm audit` e `npm audit --omit=dev` retornaram zero vulnerabilidades nesta execução, diferentemente do relatório anterior de 12 registros do GHSA-fc5q-39xc-vjpf; não houve alteração de dependências nesta retomada e o resultado, isoladamente, não comprova correção do advisory ou elimina a necessidade de reavaliação antes do deploy. A atualização parcial de T010 incluiu favicon funcional e símbolo aprovado no desenho, preservando o texto original; o Header da aplicação e os controles ainda precisam ser implementados e verificados. Fase não pronta para aprovação: T009 e T010 bloqueadas parcialmente; T005 da fase anterior permanece pendente.
 
 ### Fase 2 — Domínio, carrinho e persistência
 
