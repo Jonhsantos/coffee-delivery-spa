@@ -223,14 +223,14 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 
 #### [ ] T014 — Implementar seletores derivados
 
-- **Status:** `PENDENTE`.
+- **Status:** `EM ANDAMENTO` — seletores e testes implementados; commit pendente.
 - **Objetivo:** Calcular total de unidades, subtotal, frete e total sem duplicar valores no estado.
 - **Requisitos relacionados:** RF-04, RF-10; RN-03, RN-04.
 - **Arquivos afetados:** `src/utils/cartSelectors.ts`, `src/tests/money.test.ts`.
 - **Critério de pronto:** Contagem soma quantidades e não tipos; cálculos seguros após sanitização.
 - **Teste a realizar:** Testar carrinhos com múltiplas quantidades, vazio e IDs inválidos.
 - **Commit sugerido:** `feat: criar seletores de carrinho`.
-- **Registro de execução:** teste `NÃO EXECUTADO` · evidência `—` · commit `—` · data `—`.
+- **Registro de execução, 2026-11-22:** `npm run test` PASSOU (28 testes no total), incluindo contagem por unidades, vazio, IDs inválidos, duplicatas e overflow; `typecheck`, `lint` e `format:check` PASSARAM. Seletores recebem catálogo por parâmetro e reutilizam cálculos monetários. Integração ao catálogo real depende de T005. Commit pendente.
 
 #### [ ] T015 — Implementar persistência segura e schemas
 
