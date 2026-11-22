@@ -188,16 +188,16 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 
 ### Fase 2 — Domínio, carrinho e persistência
 
-#### [ ] T011 — Criar contratos e tipos de domínio
+#### [x] T011 — Criar contratos e tipos de domínio
 
-- **Status:** `EM ANDAMENTO` — contratos e verificações concluídos; commit pendente.
+- **Status:** `CONCLUÍDA`.
 - **Objetivo:** Implementar `Coffee`, `CartItem`, `DeliveryAddress`, `PaymentMethod`, `Order` e snapshot de itens conforme TECH §5.
 - **Requisitos relacionados:** RF-01–RF-13; RN-01–RN-10.
 - **Arquivos afetados:** `src/types/coffee.ts`, `src/types/cart.ts`, `src/types/checkout.ts`, `src/types/order.ts`.
 - **Critério de pronto:** Tipos consistentes, `priceCents` inteiro, sem `any` nem duplicação de modelo.
 - **Teste a realizar:** Executar `npm run typecheck` e revisão de contratos contra TECH §5.
 - **Commit sugerido:** `feat: definir contratos de dominio`.
-- **Registro de execução, 2026-11-22:** contratos comparados ao TECH §5; `npm run typecheck`, `lint`, `format:check` e `test` (7 testes) PASSARAM. `number` não garante inteiro em tempo de execução; validação segura permanece nas fronteiras e tarefas de domínio. Tipos independentes de T005; catálogo continua pendente. Commit pendente.
+- **Registro de execução, 2026-11-22:** contratos comparados ao TECH §5; `npm run typecheck`, `lint`, `format:check` e `test` (7 testes) PASSARAM. `number` não garante inteiro em tempo de execução; validação segura permanece nas fronteiras e tarefas de domínio. Tipos independentes de T005; catálogo continua pendente. Commit `91a629f35c8830d546a126d25e59dd57113751b6`.
 
 #### [ ] T012 — Criar utilitário monetário e frete
 
