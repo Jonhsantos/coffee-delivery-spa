@@ -212,14 +212,14 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 
 #### [ ] T013 — Implementar reducer puro do carrinho
 
-- **Status:** `PENDENTE`.
+- **Status:** `EM ANDAMENTO` — reducer e testes implementados; commit pendente.
 - **Objetivo:** Criar ações `ADD_ITEM`, `INCREMENT_ITEM`, `DECREMENT_ITEM`, `REMOVE_ITEM`, `CLEAR_CART` e guardas de IDs/quantidades.
 - **Requisitos relacionados:** RF-02, RF-03, RF-05; RN-01, RN-02, RN-10.
 - **Arquivos afetados:** `src/reducers/cartReducer.ts`, `src/tests/cartReducer.test.ts`.
 - **Critério de pronto:** Adicionar IDs iguais consolida; quantidade inválida é rejeitada; decrementar 1→0 remove.
 - **Teste a realizar:** Testar ações, unicidade, limites inteiros e imutabilidade.
 - **Commit sugerido:** `feat: implementar reducer de carrinho`.
-- **Registro de execução:** teste `NÃO EXECUTADO` · evidência `—` · commit `—` · data `—`.
+- **Registro de execução, 2026-11-22:** fábrica recebe catálogo por parâmetro, testada com dados fictícios; `npm run test` PASSOU (24 testes no total), incluindo consolidação, IDs inválidos, inteiros, overflow, ações e imutabilidade; `npm run lint`, `typecheck`, `format:check` e `build` PASSARAM. Integração com catálogo oficial ainda depende de T005. Commit pendente.
 
 #### [ ] T014 — Implementar seletores derivados
 
