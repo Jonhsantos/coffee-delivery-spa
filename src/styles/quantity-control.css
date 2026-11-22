@@ -1,0 +1,36 @@
+.quantity-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 38px;
+  padding: 8px;
+  border-radius: 6px;
+  background: var(--color-base-button);
+  color: var(--text-primary);
+  font: 400 1rem / 1.3 var(--font-body);
+}
+
+.quantity-control button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  min-height: 24px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.quantity-control button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.quantity-control button:focus-visible {
+  outline: 2px solid var(--color-purple-dark);
+  outline-offset: 2px;
+}
+
+.quantity-control span {
+  min-width: 20px;
+  text-align: center;
+}
