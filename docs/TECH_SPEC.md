@@ -501,6 +501,8 @@ Esses 16 valores são **oficiais para o tema claro**. Centralizar sua declaraç�
 
 **Dark mode:** não foram disponibilizados códigos HEX oficiais para a paleta escura. Verificar primeiro se `coffee-delivery.pen` contém frames/tokens dark; se não contiver, configurar em `[data-theme='dark']` **aliases semânticos** (`--surface-page`, `--surface-card`, `--surface-input`, `--text-primary`, `--text-secondary`, `--text-muted` e estados necessários), usando valores derivados e testados quanto a contraste, identificados como **propostos/pendentes de validação visual**, e não como tokens oficiais do PRD. Manter os 16 tokens originais imutáveis; não aplicar `filter: invert()` às imagens ou à logo. (**RF-14/15; RNF-01/02/08**)
 
+**Aliases técnicos implementados:** `--surface-page: #191716`, `--surface-card: #292524`, `--surface-input: #403a39`, `--text-primary: #f5f1ef`, `--text-secondary: #e4dcda`, `--text-muted: #c3b9b6` e erro `#ffb4ab`. São escolhas técnicas, não cores oficiais do design; validação completa de contraste permanece necessária.
+
 ### 10.1.1 Tipografia oficial e aplicação (PRD v1.2 §12.2)
 
 **Famílias:** `Baloo 2` em títulos e `Roboto` em textos, tags, formulários e botões. Obter em Google Fonts ou hospedar localmente, carregar somente pesos necessários; fallback de sistema preserva a usabilidade se a fonte falhar. Manter `font-family` como tokens centralizados.

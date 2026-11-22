@@ -22,4 +22,16 @@
   --text-primary: var(--color-base-title);
   --text-secondary: var(--color-base-text);
   --text-muted: var(--color-base-label);
+  --color-error: #b3261e;
+}
+
+/* Aliases técnicos para o tema escuro; não são cores oficiais do arquivo visual. */
+[data-theme='dark'] {
+  --surface-page: #191716;
+  --surface-card: #292524;
+  --surface-input: #403a39;
+  --text-primary: #f5f1ef;
+  --text-secondary: #e4dcda;
+  --text-muted: #c3b9b6;
+  --color-error: #ffb4ab;
 }
