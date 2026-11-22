@@ -11,6 +11,6 @@ geradas no símbolo são próprias do ativo e não substituem os tokens oficiais
 PRD. A proposta separada usa Baloo 2; o texto vetorial original dos cabeçalhos
 do desenho foi preservado.
 
-A aplicação no Header ainda depende da implementação desse componente. A
-aprovação do símbolo não representa conclusão de RF-16 nem validação do
-Header.
+O Header usa a composição vetorial do frame oficial, exportada para
+`src/assets/sKMTC.svg`, que combina o símbolo aprovado com o texto original.
+Isso não representa, por si só, a conclusão de RF-16.

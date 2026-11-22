@@ -1,7 +1,7 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router'
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react'
 import { useState } from 'react'
-import logo from './assets/logo-cafe-rodinhas.svg'
+import logo from './assets/sKMTC.svg'
 import { QuantityControl } from './components/QuantityControl'
 import { coffees } from './data/coffees'
 import { useCart } from './hooks/useCart'
@@ -49,6 +49,8 @@ function Card({ coffee }: { coffee: CoffeeType }) {
 }
 
 function Home() {
+  // O catálogo está organizado em colunas no arquivo de referência.
+  const order = [0, 4, 8, 11, 1, 5, 9, 12, 2, 6, 10, 13, 3, 7]
   return (
     <main>
       <section className="hero container">
@@ -73,14 +75,16 @@ function Home() {
             </li>
           </ul>
         </div>
-        <img className="hero-image" src={coffees[0].imageUrl} alt="" />
+        <div className="hero-image" aria-hidden="true" />
       </section>
       <section className="container catalog">
         <h2>Nossos cafés</h2>
         <div className="coffee-grid">
-          {coffees.map((coffee) => (
-            <Card key={coffee.id} coffee={coffee} />
-          ))}
+          {order
+            .map((index) => coffees[index])
+            .map((coffee) => (
+              <Card key={coffee.id} coffee={coffee} />
+            ))}
         </div>
       </section>
     </main>

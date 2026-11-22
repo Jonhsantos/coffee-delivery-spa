@@ -12,6 +12,7 @@ Na revisão da branch main, foram encontrados Vite, React, TypeScript, Tailwind,
 
 ### [ ] F01 — Home, Header e navegação
 - Status: Em andamento. Home e navegação inicial implementadas; falta validação visual e da jornada no navegador. Checkout e confirmação ainda são placeholders. `typecheck` e `lint` passaram; `test`: 36 testes passaram; `build` e `format:check` passaram. Implementação parcial: commit `f94aa79`.
+- Revisão visual parcial, 2026-11-22: referências e telas comparadas no navegador; corrigidos marca, sequência dos cafés, medidas e cores da Home. A imagem do hero não está disponível no frame (preenchimento sem arquivo); não foi inventada. Layout em 320 px inspecionado sem rolagem horizontal. `typecheck`, `lint`, `test` (36) e `build` passaram. Checkout, Success e tema escuro continuam pendentes.
 - Objetivo: entregar a interface inicial funcional, reaproveitando catálogo, assets, QuantityControl e CartProvider. Criar rotas /, /checkout, /success e fallback; Header com logo, contador de unidades e acesso ao checkout; hero e grid dos 14 cafés segundo o .pen. Usar Phosphor e feedback acessível.
 - Requisitos: RF-01–04, RF-06–07, RF-15–16; RN-01–02, RN-08–09.
 - Arquivos: src/App.tsx, src/main.tsx, src/pages/, src/components/, src/styles/ (conforme necessidade).

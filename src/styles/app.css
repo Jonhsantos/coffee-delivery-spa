@@ -9,8 +9,8 @@
   justify-content: space-between;
 }
 .header img {
-  width: 110px;
-  max-height: 72px;
+  width: 85px;
+  height: 40px;
 }
 .cart-link,
 .add-button {
@@ -37,10 +37,11 @@
 }
 .hero {
   display: grid;
-  grid-template-columns: 3fr 2fr;
-  align-items: center;
-  gap: 48px;
-  padding-block: 80px;
+  grid-template-columns: 588px 476px;
+  align-items: start;
+  gap: 56px;
+  min-height: 544px;
+  padding-top: 94px;
 }
 h1,
 h2,
@@ -57,14 +58,15 @@ h3 {
   margin-top: 16px;
 }
 .hero-image {
-  width: min(80%, 320px);
-  justify-self: center;
+  width: 100%;
+  height: 360px;
 }
 .benefits {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-top: 56px;
+  grid-template-columns: 231px 294px;
+  gap: 20px 40px;
+  margin-top: 66px;
   list-style: none;
   padding: 0;
 }
@@ -82,11 +84,22 @@ h3 {
   width: 32px;
   height: 32px;
 }
+.benefits li:nth-child(2) svg {
+  background: var(--color-base-text);
+}
+.benefits li:nth-child(3) svg {
+  background: var(--color-yellow);
+}
+.benefits li:nth-child(4) svg {
+  background: var(--color-purple);
+}
 .catalog {
-  padding-bottom: 80px;
+  padding-top: 32px;
+  padding-bottom: 157px;
 }
 .catalog h2 {
   font-size: 32px;
+  line-height: 1.3;
   margin-bottom: 54px;
 }
 .coffee-grid {
@@ -98,7 +111,8 @@ h3 {
   background: var(--surface-card);
   border-radius: 6px 36px;
   text-align: center;
-  padding: 0 20px 20px;
+  padding: 0 20px 24px;
+  min-height: 310px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -127,31 +141,43 @@ h3 {
 }
 .coffee-card h3 {
   font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
 }
 .coffee-card p {
   color: var(--text-muted);
   font-size: 14px;
-  margin: 8px 0 32px;
+  margin: 8px 0 24px;
+  line-height: 1.3;
   flex: 1;
 }
 .card-actions {
   display: flex;
   gap: 8px;
   align-items: center;
-  width: 100%;
+  width: calc(100% - 8px);
 }
 .card-actions strong {
   margin-right: auto;
   white-space: nowrap;
   font-family: var(--font-title);
-  font-size: 18px;
+  font-size: 24px;
 }
 .add-button {
   color: white;
   background: var(--color-purple-dark);
   cursor: pointer;
 }
+@media (max-width: 1152px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.5fr);
+    gap: 24px;
+  }
+}
 @media (max-width: 900px) {
+  .benefits {
+    grid-template-columns: 1fr;
+  }
   .coffee-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -160,6 +186,7 @@ h3 {
   .hero {
     display: block;
     padding-block: 40px;
+    min-height: 0;
   }
   .hero-image {
     display: none;
