@@ -234,14 +234,14 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 
 #### [ ] T015 — Implementar persistência segura e schemas
 
-- **Status:** `PENDENTE`.
+- **Status:** `EM ANDAMENTO` — adaptador, schemas e testes realizados; commit pendente.
 - **Objetivo:** Criar leitor/escritor protegido por try/catch, versões de keys e validação Zod para storage.
 - **Requisitos relacionados:** RF-06, RF-13, RF-14; RN-06, RN-10.
 - **Arquivos afetados:** `src/hooks/useLocalStorage.ts`, `src/schemas/storageSchemas.ts`, `src/tests/storage.test.ts`.
 - **Critério de pronto:** Storage corrompido não quebra app; IDs e quantidades inválidos não entram no domínio; fallback em memória sinalizado.
 - **Teste a realizar:** Simular JSON inválido, quota, storage bloqueado, entradas duplicadas e refresh.
 - **Commit sugerido:** `feat: criar persistencia validada`.
-- **Registro de execução:** teste `NÃO EXECUTADO` · evidência `—` · commit `—` · data `—`.
+- **Registro de execução, 2026-11-22:** adaptador retorna estados distintos para ausência, JSON inválido e storage indisponível; armazenamento alternativo mantém dados em memória e sinaliza escrita não persistida. Schemas validam tema e snapshot (incluindo totais e UF); sanitização de carrinho verifica IDs, quantidades e consolida duplicatas. `npm run test` PASSOU (33 testes), incluindo leitura após escrita, JSON inválido, storage bloqueado e quota; `typecheck`, `lint` e `format:check` PASSARAM. No navegador, chave de teste temporária sobreviveu ao reload e foi removida; feedback visual e hidratação do provider serão verificados em T016. Commit pendente.
 
 #### [ ] T016 — Integrar CartContext e hook useCart
 
