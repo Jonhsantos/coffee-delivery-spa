@@ -113,16 +113,16 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 - **Commit sugerido:** `chore: padronizar lint formatacao e tipos`.
 - **Registro de execução, 2026-11-18:** `npm install -D` PASSOU com alertas; `npm run lint`, `npm run format`, `npm run format:check`, `npm run typecheck`, `npm run test` (1 teste) e `npm run build` PASSARAM; `npm audit` FALHOU com 12 registros altos do único advisory aceito GHSA-fc5q-39xc-vjpf, incluindo novo caminho `typescript-eslint` → `typescript-estree` → `tinyglobby` → `picomatch`; `npm audit --omit=dev` PASSOU, zero vulnerabilidades. Compatibilidade das versões instaladas conferida com `npm ls`; nenhuma correção de segurança foi afirmada. Lint usa configurações recomendadas JS/TypeScript, hooks React e React Refresh; Prettier verifica arquivos da aplicação/configuração, preservando os SPECs e `.pen`. Aliases não foram necessários; importações relativas existentes foram mantidas. Detalhes e restrições do advisory em TECH §11.4. Commit: `ad3fb5e4851c819b80d6fee5780b33352190e114` — `chore: padronizar lint formatacao e tipos`.
 
-#### [ ] T005 — Definir catálogo e ativos autorizados
+#### [x] T005 — Definir catálogo e ativos autorizados
 
-- **Status:** `EM ANDAMENTO` — catálogo e verificações concluídos; commit pendente.
+- **Status:** `CONCLUÍDA`.
 - **Objetivo:** Localizar imagens, nomes, preços e tags aprovados; criar arquivo local tipado sem inventar conteúdo final.
 - **Requisitos relacionados:** RF-01, RF-16; RN-08.
 - **Arquivos afetados:** `src/data/coffees.ts`, `src/assets/`, `src/types/coffee.ts`.
 - **Critério de pronto:** Itens têm IDs únicos, preços em centavos e links de imagens válidos; pendências explícitas.
 - **Teste a realizar:** Validar IDs únicos, números inteiros seguros e renderização básica de imagens.
 - **Commit sugerido:** `feat: estruturar catalogo tipado de cafes`.
-- **Registro de execução, 2026-11-22:** 14 produtos, nomes, descrições, preço de R$ 9,90 e tags ativas extraídos dos cartões do `.pen`; categorias usam a primeira tag de cada cartão. Associação das 14 imagens obtida no quadro de imagens do `.pen`, incluindo `image-13.png` no grupo `Type=Expresso Cremoso`; cópias em `src/assets/coffees/`, sem mover os originais. Os cartões do desenho têm referências de imagem ausentes ou incompletas; o quadro de imagens forneceu o mapeamento. Teste automatizado confirma 14 IDs e imagens únicos e preços inteiros positivos; `npm run test` PASSOU (29 testes), `lint`, `typecheck`, `build` e `format:check` PASSARAM. No navegador, as 14 imagens foram decodificadas com 200×200 px; sua apresentação nos cards finais ainda depende da Home. Commit pendente.
+- **Registro de execução, 2026-11-22:** 14 produtos, nomes, descrições, preço de R$ 9,90 e tags ativas extraídos dos cartões do `.pen`; categorias usam a primeira tag de cada cartão. Associação das 14 imagens obtida no quadro de imagens do `.pen`, incluindo `image-13.png` no grupo `Type=Expresso Cremoso`; cópias em `src/assets/coffees/`, sem mover os originais. Os cartões do desenho têm referências de imagem ausentes ou incompletas; o quadro de imagens forneceu o mapeamento. Teste automatizado confirma 14 IDs e imagens únicos e preços inteiros positivos; `npm run test` PASSOU (29 testes), `lint`, `typecheck`, `build` e `format:check` PASSARAM. No navegador, as 14 imagens foram decodificadas com 200×200 px; sua apresentação nos cards finais ainda depende da Home. Commit `d702cf0673a5a1a8e83f860c4e9d1cc5a02c5507`.
 
 ### Fase 1 — Design system e fundação visual
 
