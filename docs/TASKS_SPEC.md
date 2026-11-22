@@ -19,28 +19,28 @@ Na revisão da branch main, foram encontrados Vite, React, TypeScript, Tailwind,
 - Pronto: Home fiel ao design, adicionar repetidos consolida, badge soma unidades, refresh mantém carrinho; rotas funcionam. Validar jornada no navegador. Commit: `feat: implementar home e navegacao`.
 
 ### [ ] F02 — Checkout e ViaCEP
-- Status: Pendente.
+- Status: Em andamento. Checkout e ViaCEP implementados; commit `7e1d3c8`, integração `cc97c70`. Consulta real do CEP público 01001000 no navegador retornou HTTP 200 em 2026-11-22. Sucesso, CEP inexistente e falha de gravação cobertos; faltam testes específicos para respostas parciais e concorrentes e revisão visual completa.
 - Objetivo: implementar linhas editáveis, resumo financeiro, formulário RHF/Zod, consulta real ViaCEP e pagamento fictício crédito/débito/dinheiro. Reutilizar seletores e money.ts. Frete 500 centavos com itens e zero sem itens. CEP atual deve ter consulta bem-sucedida; tratar loading, inválido, inexistente, falha, respostas parciais e obsoletas; permitir correções manuais, número e complemento não sobrescritos. Impedir envio inválido e carrinho vazio.
 - Requisitos: RF-05, RF-08–11, RF-15; RN-01–05, RN-07–10.
 - Arquivos: src/pages/Checkout.tsx, src/components/, src/schemas/, src/hooks/, src/services/.
 - Pronto: editar/remover atualiza totais e badge; formulário e pagamento funcionam; CEP real preenche dados, falhas são visíveis e impedem confirmação inválida. Commit: `feat: implementar checkout e consulta de cep`.
 
 ### [ ] F03 — Confirmação e pedido persistido
-- Status: Pendente.
+- Status: Em andamento. Snapshot validado e persistido antes da limpeza; Success e ilustração exportada do Pencil integrados no commit `cc97c70`. Fluxo real no navegador e refresh com CEP simulado no E2E passaram; faltam revisão de casos extremos de storage e validação visual completa.
 - Objetivo: validar novamente a submissão, impedir envio duplicado, criar snapshot independente com itens, endereço, pagamento e totais; persistir com storage existente antes de limpar carrinho. Falha ao persistir mantém carrinho e informa erro. Criar Success conforme .pen, com resumo completo e indicação de simulação, estado sem pedido válido e recuperação após refresh.
 - Requisitos: RF-11–13; RN-05–06, RN-09–10.
 - Arquivos: src/pages/Checkout.tsx, src/pages/Success.tsx, src/utils/order.ts, tipos e schemas existentes.
 - Pronto: compra fictícia completa; pedido permanece após refresh, carrinho limpa somente após gravação bem-sucedida; acesso direto sem pedido apresenta orientação. Commit: `feat: finalizar pedido e confirmacao`.
 
 ### [ ] F04 — Tema e acabamento visual
-- Status: Pendente.
+- Status: Em andamento. Tema persistido e aliases técnicos no commit `4034d5d`; interface integrada em `cc97c70`. Success em 320 px e tema escuro inspecionada, sem overflow após ajuste; faltam revisão completa de contraste, teclado e demais telas.
 - Objetivo: tema claro/escuro persistido com preferência do sistema como fallback; aliases semânticos, contraste, responsividade desde 320 px, teclado, foco, rótulos e mensagens de erro. Comparar as três telas com o .pen. Preservar paleta, Baloo 2, Roboto, Phosphor, logo aprovada e favicon. Adaptar mobile/dark quando não houver frame; registrar decisões técnicas sem inventar referências oficiais. Se houver asset de hero/ilustração indisponível, aproveitar material autorizado ou registrar limitação, sem paralisar o restante.
 - Requisitos: RF-14–16, RNF do PRD; RF-01, RF-08, RF-11.
 - Arquivos: src/contexts/, src/hooks/, src/components/, src/pages/, src/styles/, docs/brand.md se necessário.
 - Pronto: todas as telas utilizáveis em desktop/mobile, sem overflow lateral, tema persiste, controles acessíveis; marca integrada. Commit: `style: finalizar tema e interface responsiva`.
 
 ### [ ] F05 — Validação e entrega acadêmica
-- Status: Pendente.
+- Status: Em andamento. Em 2026-11-22, `typecheck`, `lint`, `test` (40), `build`, `format:check` e `test:e2e` (2) passaram; `npm audit` e `npm audit --omit=dev` retornaram zero vulnerabilidades. A jornada foi testada com CEP real no navegador e com resposta interceptada no Playwright. README criado; faltam os testes e revisões indicados em F01–F04. O hero usa imagem provisória do catálogo porque o frame não tem arquivo associado.
 - Objetivo: preservar testes existentes, atualizar smoke test para a aplicação real e adicionar somente testes essenciais ausentes de checkout/ViaCEP/snapshot/tema e jornada Playwright. Executar typecheck, lint, test, build, format:check e test:e2e; verificar ViaCEP real no navegador com CEP público e fluxo em desktop/mobile. Corrigir regressões. README com execução, stack, simulação, marca/uso real de IA e limitações. Preparar fallback SPA para hospedagem se necessário; não publicar sem autorização.
 - Requisitos: RF-01–16, RN-01–10 e RNF do PRD.
 - Arquivos: src/tests/, e2e/, playwright.config.ts, README.md, docs/TASKS_SPEC.md e configuração de hospedagem se aplicável.
