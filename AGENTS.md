@@ -18,7 +18,7 @@ Antes de **escrever, gerar, alterar ou remover código**, abrir e ler os arquivo
 1. `docs/PRD_SPEC.md` — funcionalidades **RF-01 a RF-16**, regras de negócio **RN-01 a RN-10**, requisitos não funcionais **RNF-01 a RNF-08**, critérios de aceite e limites do MVP.
 2. `coffee-delivery.pen` — **fonte de verdade visual**, incluindo frames, componentes, cores, tipografia, espaçamento, ícones, estados e responsividade; consultar pelo recurso compatível com arquivos `.pen` disponível no ambiente.
 3. `docs/TECH_SPEC.md` — stack, arquitetura, tipos, estado, efeitos, persistência, validações, testes e organização das pastas.
-4. `docs/TASKS_SPEC.md` — plano de execução **T001–T043**, ordem, dependências, critérios de pronto, testes e registro de evidências.
+4. `docs/TASKS_SPEC.md` — plano de execução **F01–F05**, ordem, critérios de pronto, testes e registro de evidências.
 5. `AGENTS.md` — estas regras de operação (reler quando o agente for retomado, transferido ou reconfigurado).
 
 **Antes da primeira alteração em cada sessão:** verificar a existência, a legibilidade e o estado atual desses arquivos; observar também `package.json`, lockfile, repositório Git, código e assets existentes. Não assumir que a estrutura planejada já está implementada.
@@ -91,9 +91,9 @@ coffee-delivery-spa/
 
 A árvore é **alvo arquitetural**, não prova de que os arquivos existem. Não criar pastas/arquivos ociosos apenas para reproduzi-la. Respeitar as responsabilidades específicas e o inventário do TECH SPEC ao implementar cada tarefa.
 
-## 6. Processo obrigatório — execução por fases e uma tarefa por vez
+## 6. Processo obrigatório — entregas F01–F05
 
-Uma autorização explícita para executar uma fase do `docs/TASKS_SPEC.md` permite realizar, em sequência, todas as tarefas dessa fase sem solicitar autorização individual para cada uma. Antes de iniciar, identificar todas as tarefas da fase, seus requisitos, dependências e critérios de aceite; comunicar o plano. A autorização de uma fase não autoriza avançar à seguinte, modificar o `.pen`, fazer push ou realizar deploy: essas ações exigem autorização explícita própria. Uma autorização restrita a uma tarefa continua limitada a ela.
+Uma autorização geral para F01–F05 permite executá-las sequencialmente sem autorização individual. Não autoriza modificar o `.pen`, fazer push ou deploy. Uma autorização restrita continua limitada ao seu escopo.
 
 1. **Inspecionar:** ler os SPECs e o `.pen`, identificar a próxima tarefa elegível em `docs/TASKS_SPEC.md` e conferir o código existente, dependências e estado do Git.
 2. **Delimitar:** declarar internamente o ID (ex.: `T013`), objetivo, RF/RN/RNF relacionados, arquivos previstos, dependências e critério de pronto. Implementar **somente essa tarefa**; não antecipar as próximas.
@@ -104,9 +104,9 @@ Uma autorização explícita para executar uma fase do `docs/TASKS_SPEC.md` perm
 7. **Commitar:** gerar **um commit semântico real**, restrito à tarefa, após os critérios e testes serem atendidos. Registrar o hash real depois que o Git confirmar o commit; nunca inventar hashes ou resultados.
 8. **Concluir:** marcar `[x]` / `CONCLUÍDA` somente quando implementação, critério de pronto, teste, evidência e commit forem reais; então seguir para a próxima tarefa elegível da fase autorizada, sem pedir confirmação individual.
 
-**Não executar uma fase ou T001–T043 como uma única alteração ou um único commit.** Em caso de falha, tentar corrigi-la dentro do escopo autorizado sem comprometer requisitos ou segurança. Interromper a parte afetada diante de novos riscos relevantes, dependências bloqueantes, mudança fora do escopo ou decisão que exija aprovação. Uma tarefa bloqueada permanece `[ ] BLOQUEADA`, com causa específica; é permitido prosseguir apenas com tarefas independentes da mesma fase autorizada, registrando o desvio e as dependências. Respeitar as exceções de segurança da §10.1.
+**Não executar F01–F05 como uma única alteração ou um único commit.** Em caso de falha, tentar corrigi-la dentro do escopo autorizado sem comprometer requisitos ou segurança. Interromper a parte afetada diante de novos riscos relevantes, dependências bloqueantes, mudança fora do escopo ou decisão que exija aprovação. Uma tarefa bloqueada permanece `[ ] BLOQUEADA`, com causa específica; é permitido prosseguir com tarefas independentes autorizadas. Respeitar as exceções de segurança da §10.1.
 
-Ao encerrar a fase autorizada, executar as verificações integradas aplicáveis e apresentar relatório consolidado com tarefas concluídas, pendentes e bloqueadas; arquivos; testes e resultados; commits e hashes; vulnerabilidades conhecidas e novas; pendências e decisões; e indicação fundamentada de prontidão para aprovação. Não iniciar outra fase sem autorização.
+Ao encerrar as entregas autorizadas, executar as verificações integradas aplicáveis e apresentar relatório consolidado conciso.
 
 Se a tarefa já estiver parcialmente ou totalmente implementada, auditar as evidências e adaptar somente o que falta — sem recriar a aplicação ou marcar conclusão retroativa sem prova. Se o usuário pedir uma mudança fora do escopo da tarefa, primeiro avaliar impacto e necessidade de atualizar PRD → TECH → TASKS.
 
@@ -160,9 +160,9 @@ Verificar scripts no `package.json` antes de executar. Requisitos mínimos de te
 - **Unitários:** reducer, quantidade, unicidade de item, seletores, frete, formatação, storage e schemas Zod.
 - **Integração:** interações de carrinho, checkout, estados do ViaCEP (mock de sucesso, erro, não encontrado e respostas fora de ordem), validação e snapshot do pedido.
 - **E2E:** Home → Checkout → Success, refresh/rotas diretas, carrinho vazio, tema persistente e viewport móvel.
-- **Rede real:** executar a verificação pública do ViaCEP prevista em **T039**; mocks não substituem essa evidência.
+- **Rede real:** executar a verificação pública do ViaCEP prevista em **F05**; mocks não substituem essa evidência.
 - **Visual e acessibilidade:** comparar com `coffee-delivery.pen`, conferir tokens/ícones/fontes, testar teclado, foco, mensagens de erro, contraste, zoom e largura mínima de 320px.
-- **Entrega:** build válido, deploy HTTPS, fallback SPA e smoke test em produção, conforme T040–T043.
+- **Entrega:** build válido e fallback SPA; deploy e smoke test em produção dependem de autorização.
 
 Registrar comando, ambiente, resultado (passou/falhou/não executado), evidência e limitações. Não declarar cobertura, desempenho, acessibilidade ou fidelidade visual sem verificação. Falha relevante deve ser resolvida ou deixar a tarefa pendente/bloqueada, salvo risco específico explicitamente aceito e documentado conforme §10.1.
 
@@ -196,7 +196,7 @@ Não usar `git add .` indiscriminadamente sem inspecionar o status/diff. Não in
 
 ## 12. Protocolo de comunicação e encerramento
 
-Antes de iniciar cada tarefa, apresentar de forma breve a **tarefa ID**, objetivo e arquivos envolvidos. Registrar e comunicar o resultado de cada tarefa; ao final da fase, consolidar os resultados sem solicitar confirmação entre tarefas. Modelo por tarefa:
+Registrar o resultado resumido de cada entrega no checklist e apresentar um único relatório final, sem solicitar confirmação entre entregas. Modelo de registro:
 
 ```text
 Tarefa: T0XX — [nome]
