@@ -246,14 +246,14 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 
 #### [ ] T016 — Integrar CartContext e hook useCart
 
-- **Status:** `PENDENTE`.
+- **Status:** `EM ANDAMENTO` — integração e testes realizados; commit pendente.
 - **Objetivo:** Conectar reducer, seletores, hidratação inicial anterior à primeira escrita e operações públicas.
 - **Requisitos relacionados:** RF-03–RF-06, RF-10; RN-01–RN-04, RN-06.
 - **Arquivos afetados:** `src/contexts/CartContext.tsx`, `src/hooks/useCart.ts`, `src/main.tsx`.
 - **Critério de pronto:** Componentes podem ler/alterar carrinho; refresh recupera itens; não apaga storage na montagem.
 - **Teste a realizar:** Teste integrado de adicionar, atualizar página e ler contagem/subtotal.
 - **Commit sugerido:** `feat: integrar provider do carrinho`.
-- **Registro de execução:** teste `NÃO EXECUTADO` · evidência `—` · commit `—` · data `—`.
+- **Registro de execução, 2026-11-22:** `CartProvider` hidrata e saneia antes de escrever; impede estados que causem overflow e avisa se storage falhar. Se leitura inicial estiver bloqueada, não escreve naquela sessão, preservando dados anteriores. `npm run test` PASSOU (36 testes), incluindo StrictMode, adição, remontagem e falhas de storage; `lint`, `typecheck`, `format:check` e `build` PASSARAM. Em contexto isolado no navegador, componente de teste adicionou 2 unidades e, após navegação/reload, provider restaurou 2; dados reais não foram usados. Commit pendente.
 
 ### Fase 3 — Navegação e Home
 
