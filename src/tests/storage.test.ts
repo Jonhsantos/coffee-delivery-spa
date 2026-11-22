@@ -96,6 +96,11 @@ describe('storage validado', () => {
       ),
     ).toEqual([{ productId: 'a', quantity: 5 }])
     expect(sanitizeCart({}, { a: coffee })).toEqual([])
+    expect(
+      sanitizeCart([{ productId: 'a', quantity: Number.MAX_SAFE_INTEGER }], {
+        a: coffee,
+      }),
+    ).toEqual([])
   })
   it('valida tema e integridade do snapshot', () => {
     expect(themeSchema.safeParse('dark').success).toBe(true)

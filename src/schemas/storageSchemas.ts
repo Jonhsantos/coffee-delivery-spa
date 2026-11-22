@@ -1,6 +1,7 @@
 import { z } from 'zod'
 import type { CartItem } from '../types/cart'
 import type { Coffee } from '../types/coffee'
+import { selectCartTotals } from '../utils/cartSelectors'
 import { calculateTotals } from '../utils/money'
 
 const positiveInteger = z.int().positive()
@@ -98,7 +99,18 @@ export function sanitizeCart(
     if (!parsed.success || !Object.hasOwn(catalog, parsed.data.productId))
       continue
     const sum = (items.get(parsed.data.productId) ?? 0) + parsed.data.quantity
-    if (Number.isSafeInteger(sum)) items.set(parsed.data.productId, sum)
+    if (!Number.isSafeInteger(sum)) continue
+    const next = new Map(items)
+    next.set(parsed.data.productId, sum)
+    try {
+      selectCartTotals(
+        [...next].map(([productId, quantity]) => ({ productId, quantity })),
+        catalog,
+      )
+      items.set(parsed.data.productId, sum)
+    } catch {
+      continue
+    }
   }
   return [...items].map(([productId, quantity]) => ({ productId, quantity }))
 }

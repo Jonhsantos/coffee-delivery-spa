@@ -242,6 +242,7 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 - **Teste a realizar:** Simular JSON inválido, quota, storage bloqueado, entradas duplicadas e refresh.
 - **Commit sugerido:** `feat: criar persistencia validada`.
 - **Registro de execução, 2026-11-22:** adaptador retorna estados distintos para ausência, JSON inválido e storage indisponível; armazenamento alternativo mantém dados em memória e sinaliza escrita não persistida. Schemas validam tema e snapshot (incluindo totais e UF); sanitização de carrinho verifica IDs, quantidades e consolida duplicatas. `npm run test` PASSOU (33 testes), incluindo leitura após escrita, JSON inválido, storage bloqueado e quota; `typecheck`, `lint` e `format:check` PASSARAM. No navegador, chave de teste temporária sobreviveu ao reload e foi removida; feedback visual e hidratação do provider serão verificados em T016. Commit `081a87387d95446218221253412fa71bcdf484e7`.
+- **Correção posterior, 2026-11-22:** sanitização também rejeita entrada que tornaria contagem ou totais inseguros; regressão, `lint` e `typecheck` PASSARAM (33 testes). Necessária para integração segura em T016.
 
 #### [ ] T016 — Integrar CartContext e hook useCart
 
