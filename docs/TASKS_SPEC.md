@@ -277,16 +277,16 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 - **Commit sugerido:** `feat: criar header e contador de itens`.
 - **Registro de execução:** teste `NÃO EXECUTADO` · evidência `—` · commit `—` · data `—`.
 
-#### [ ] T019 — Criar controle de quantidade acessível
+#### [x] T019 — Criar controle de quantidade acessível
 
-- **Status:** `EM ANDAMENTO` — implementação e testes concluídos; commit pendente.
+- **Status:** `CONCLUÍDA`.
 - **Objetivo:** Botões +/- e leitura de quantidade com mínimo de 1 antes de adicionar.
 - **Requisitos relacionados:** RF-02; RN-01; RNF-01.
 - **Arquivos afetados:** `src/components/QuantityControl.tsx`.
 - **Critério de pronto:** Nunca permite adicionar zero, negativo, fração ou valor fora do intervalo.
 - **Teste a realizar:** Testar teclado, cliques e limite mínimo.
 - **Commit sugerido:** `feat: criar seletor de quantidade`.
-- **Registro de execução, 2026-11-22:** controle isolado com botões Phosphor, nomes acessíveis por produto, foco visível e validação de inteiros seguros; `npm run test` PASSOU (7 testes, incluindo clique, teclado, mínimo, valores inválidos e limite superior); `npm run lint`, `typecheck`, `build` e `format:check` PASSARAM. Controle ainda não integrado à Home; inspeção visual no contexto e validação global de T009 dependem das telas. Desvio de ordem autorizado: controle independente, sem antecipar carrinho ou catálogo. Commit pendente.
+- **Registro de execução, 2026-11-22:** controle isolado com botões Phosphor, nomes acessíveis por produto, foco visível e validação de inteiros seguros; `npm run test` PASSOU (7 testes, incluindo clique, teclado, mínimo, valores inválidos e limite superior); `npm run lint`, `typecheck`, `build` e `format:check` PASSARAM. Controle ainda não integrado à Home; inspeção visual no contexto e validação global de T009 dependem das telas. Desvio de ordem autorizado: controle independente, sem antecipar carrinho ou catálogo. Commit `2e8cdae1cd18ab3abdf1ab5879028f2c087b0a64`.
 
 #### [ ] T020 — Construir CoffeeCard reutilizável
 
