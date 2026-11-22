@@ -161,25 +161,25 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 
 #### [ ] T009 — Definir iconografia Phosphor
 
-- **Status:** `PENDENTE`.
+- **Status:** `BLOQUEADA` — componentes e controles da UI ainda não existem para verificação de iconografia, foco e rótulos.
 - **Objetivo:** Mapear nomes reais dos ícones disponíveis, pesos, tamanho, foco e rótulos acessíveis.
 - **Requisitos relacionados:** RF-15, RF-16; RNF-01.
 - **Arquivos afetados:** `src/components/`, `docs/TECH_SPEC.md` (se mapeamento técnico necessário).
 - **Critério de pronto:** Ícones da UI usam somente `@phosphor-icons/react` e seguem `.pen`; ícones interativos acessíveis.
 - **Teste a realizar:** Inspecionar ícones do design e verificar `aria-label` e foco em botões.
 - **Commit sugerido:** `style: padronizar icones phosphor`.
-- **Registro de execução:** teste `NÃO EXECUTADO` · evidência `—` · commit `—` · data `—`.
+- **Registro de avaliação, 2026-11-22:** `@phosphor-icons/react` consta em `package.json` e a prancha do `.pen` indica Phosphor; inspeção de `src/` confirma ausência dos componentes e botões da interface real. Teste de `aria-label`, foco e aderência dos ícones da UI: NÃO EXECUTÁVEL sem esses controles. Não foram criados exemplos artificiais nem antecipadas telas de outras fases. Desbloqueio: implementar os controles correspondentes nas tarefas autorizadas e então validar os ícones reais. Nenhuma conclusão reivindicada.
 
 #### [ ] T010 — Integrar logo, favicon e documentação da marca
 
-- **Status:** `PENDENTE`.
+- **Status:** `BLOQUEADA` — logo original aprovada e informações de criação não identificadas; Header ainda inexistente.
 - **Objetivo:** Usar logo original aprovada; gerar favicon a partir dela e registrar uso real de IA sem atribuições presumidas.
 - **Requisitos relacionados:** RF-16; RNF-02.
 - **Arquivos afetados:** `src/assets/`, `public/`, `index.html`, `README.md`, `docs/brand.md` (opcional).
 - **Critério de pronto:** Logo final em Header/ativo e favicon; marca documentada; se ativo ausente, tarefa bloqueada, nunca simulada.
 - **Teste a realizar:** Conferir assets reais, favicon no navegador e aderência ao `.pen`.
 - **Commit sugerido:** `feat: integrar identidade e favicon`.
-- **Registro de execução:** teste `NÃO EXECUTADO` · evidência `—` · commit `—` · data `—`.
+- **Registro de avaliação, 2026-11-22:** buscas em `src/assets/`, `public/` e nomes de arquivos com `logo` não identificaram ativo de logo; `README.md` e Header não existem. A referência visual contém marca, mas não comprova aprovação da logo original ou uso de IA. Favicon no navegador: 404; teste de integração e aderência: NÃO EXECUTÁVEL sem ativo aprovado e Header. Desbloqueio: responsável fornecer ou identificar e aprovar ativo e informações reais disponíveis; integrar quando Header estiver implementado. Não foi criada logo substituta.
 
 ### Fase 2 — Domínio, carrinho e persistência
 
