@@ -169,6 +169,7 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 - **Teste a realizar:** Inspecionar ícones do design e verificar `aria-label` e foco em botões.
 - **Commit sugerido:** `style: padronizar icones phosphor`.
 - **Registro de avaliação, 2026-11-22:** `@phosphor-icons/react` consta em `package.json` e a prancha do `.pen` indica Phosphor; inspeção de `src/` confirma ausência dos componentes e botões da interface real. Teste de `aria-label`, foco e aderência dos ícones da UI: NÃO EXECUTÁVEL sem esses controles. Não foram criados exemplos artificiais nem antecipadas telas de outras fases. Desbloqueio: implementar os controles correspondentes nas tarefas autorizadas e então validar os ícones reais. Nenhuma conclusão reivindicada.
+- **Reavaliação:** importação do pacote instalado via Node confirmou as exportações `MapPin`, `Trash`, `CurrencyDollar`, `ShoppingCart`, `Timer`, `Package`, `Coffee`, `Plus`, `Minus`, `CreditCard`, `Money` e `Bank`. São candidatos técnicos, não uma escolha de pesos, tamanhos ou uso validada no layout. Os controles reais continuam ausentes; foco e nomes acessíveis permanecem não verificáveis.
 
 #### [ ] T010 — Integrar logo, favicon e documentação da marca
 
