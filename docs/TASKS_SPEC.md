@@ -199,16 +199,16 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 - **Commit sugerido:** `feat: definir contratos de dominio`.
 - **Registro de execução, 2026-11-22:** contratos comparados ao TECH §5; `npm run typecheck`, `lint`, `format:check` e `test` (7 testes) PASSARAM. `number` não garante inteiro em tempo de execução; validação segura permanece nas fronteiras e tarefas de domínio. Tipos independentes de T005; catálogo continua pendente. Commit `91a629f35c8830d546a126d25e59dd57113751b6`.
 
-#### [ ] T012 — Criar utilitário monetário e frete
+#### [x] T012 — Criar utilitário monetário e frete
 
-- **Status:** `EM ANDAMENTO` — cálculos e testes concluídos; commit pendente.
+- **Status:** `CONCLUÍDA`.
 - **Objetivo:** Estabelecer `DELIVERY_FEE_CENTS = 500`, subtotal e total em centavos; vazio sem frete.
 - **Requisitos relacionados:** RF-10; RN-03, RN-04.
 - **Arquivos afetados:** `src/utils/money.ts`, `src/tests/money.test.ts`.
 - **Critério de pronto:** Formatação BRL correta; sem float monetário nas operações; erro para overflow.
 - **Teste a realizar:** Testar soma de itens, frete R$ 5,00, total, vazio e limites inteiros.
 - **Commit sugerido:** `feat: centralizar calculos monetarios`.
-- **Registro de execução, 2026-11-22:** `npm run test` PASSOU (17 testes no total; valores, vazio, entradas inválidas e limites); `npm run typecheck`, `lint` e `format:check` PASSARAM. `DELIVERY_FEE_CENTS` centralizado; operações em inteiros seguros; formatação usa partes inteiras BigInt para preservar centavos mesmo no limite seguro. Commit pendente.
+- **Registro de execução, 2026-11-22:** `npm run test` PASSOU (17 testes no total; valores, vazio, entradas inválidas e limites); `npm run typecheck`, `lint` e `format:check` PASSARAM. `DELIVERY_FEE_CENTS` centralizado; operações em inteiros seguros; formatação usa partes inteiras BigInt para preservar centavos mesmo no limite seguro. Commit `1f22c67832f414d6d260b537c5e8eb5cc649ebf3`.
 
 #### [ ] T013 — Implementar reducer puro do carrinho
 
