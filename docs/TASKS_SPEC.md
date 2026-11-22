@@ -161,7 +161,7 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 
 #### [ ] T009 — Definir iconografia Phosphor
 
-- **Status:** `BLOQUEADA` — componentes e controles da UI ainda não existem para verificação de iconografia, foco e rótulos.
+- **Status:** `ADIADA` — responsável autorizou pular a tarefa para avançar; critérios e testes seguem pendentes.
 - **Objetivo:** Mapear nomes reais dos ícones disponíveis, pesos, tamanho, foco e rótulos acessíveis.
 - **Requisitos relacionados:** RF-15, RF-16; RNF-01.
 - **Arquivos afetados:** `src/components/`, `docs/TECH_SPEC.md` (se mapeamento técnico necessário).
@@ -170,6 +170,7 @@ As tarefas começam **PENDENTES**; o estado atual e as evidências constam nos b
 - **Commit sugerido:** `style: padronizar icones phosphor`.
 - **Registro de avaliação, 2026-11-22:** `@phosphor-icons/react` consta em `package.json` e a prancha do `.pen` indica Phosphor; inspeção de `src/` confirma ausência dos componentes e botões da interface real. Teste de `aria-label`, foco e aderência dos ícones da UI: NÃO EXECUTÁVEL sem esses controles. Não foram criados exemplos artificiais nem antecipadas telas de outras fases. Desbloqueio: implementar os controles correspondentes nas tarefas autorizadas e então validar os ícones reais. Nenhuma conclusão reivindicada.
 - **Reavaliação:** importação do pacote instalado via Node confirmou as exportações `MapPin`, `Trash`, `CurrencyDollar`, `ShoppingCart`, `Timer`, `Package`, `Coffee`, `Plus`, `Minus`, `CreditCard`, `Money` e `Bank`. São candidatos técnicos, não uma escolha de pesos, tamanhos ou uso validada no layout. Os controles reais continuam ausentes; foco e nomes acessíveis permanecem não verificáveis.
+- **Decisão do responsável, 2026-11-22:** avançar à fase seguinte sem executar T009. O checklist permanece aberto porque os critérios de pronto não foram demonstrados; o adiamento não dispensa os requisitos de acessibilidade e fidelidade visual do produto.
 
 #### [ ] T010 — Integrar logo, favicon e documentação da marca
 
